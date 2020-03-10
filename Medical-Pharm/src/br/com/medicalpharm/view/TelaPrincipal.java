@@ -2,6 +2,7 @@ package br.com.medicalpharm.view;
 
 import br.com.medicalpharm.dao.ProdutoDAO;
 import br.com.medicalpharm.model.ProdutoModel;
+import br.com.medicalpharm.model.RequisicoesModel;
 import br.com.medicalpharm.model.UsuarioModel;
 import br.com.medicalpharm.relatorios.Relatorios;
 import br.com.medicalpharm.util.Backup;
@@ -47,6 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
 
     public void setJanelaPai(LoginGUI janelaPai) {
         jlabel_usuario.setText("Usuário: " + janelaPai.usuarioNome);
+        RequisicoesModel.usuarioNome1 = janelaPai.usuarioNome;
         janelaPai = janelaPai;
         usuarioNome = janelaPai.usuarioNome;
         codUsuario = janelaPai.codUsuário;
@@ -124,6 +126,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jButton7 = new javax.swing.JButton();
         jb_saidaArmazem = new javax.swing.JButton();
         jb_ajuste = new javax.swing.JButton();
+        jb_ajuste1 = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
         jlabel_data = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -362,7 +365,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 66, 57));
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 66, 57));
 
         jb_saidaArmazem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/shoppingbasket_delete.png"))); // NOI18N
         jb_saidaArmazem.setToolTipText("Saída de estoque por armazém ");
@@ -384,12 +387,22 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         });
         jPanel2.add(jb_ajuste, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 66, 57));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
+        jb_ajuste1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/surgeon2.png"))); // NOI18N
+        jb_ajuste1.setToolTipText("Requisições");
+        jb_ajuste1.setName("jb_ajuste1"); // NOI18N
+        jb_ajuste1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ajuste1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jb_ajuste1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 66, 57));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 80));
 
         jToolBar1.setRollover(true);
         jToolBar1.setName("jToolBar1"); // NOI18N
 
-        jlabel_data.setFont(new java.awt.Font("Dialog", 0, 12));
+        jlabel_data.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jlabel_data.setText("Data:");
         jlabel_data.setName("jlabel_data"); // NOI18N
         jToolBar1.add(jlabel_data);
@@ -398,7 +411,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jLabel2.setName("jLabel2"); // NOI18N
         jToolBar1.add(jLabel2);
 
-        jlabel_hora.setFont(new java.awt.Font("Dialog", 0, 12));
+        jlabel_hora.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jlabel_hora.setText("Hora:");
         jlabel_hora.setName("jlabel_hora"); // NOI18N
         jToolBar1.add(jlabel_hora);
@@ -407,7 +420,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jLabel1.setName("jLabel1"); // NOI18N
         jToolBar1.add(jLabel1);
 
-        jlabel_usuario.setFont(new java.awt.Font("Dialog", 0, 12));
+        jlabel_usuario.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jlabel_usuario.setText("Usuário: ");
         jlabel_usuario.setName("jlabel_usuario"); // NOI18N
         jToolBar1.add(jlabel_usuario);
@@ -416,7 +429,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jLabel4.setName("jLabel4"); // NOI18N
         jToolBar1.add(jLabel4);
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Desenvolvido por Alencar Santos Buriti Júnior                                             ");
         jLabel3.setName("jLabel3"); // NOI18N
         jToolBar1.add(jLabel3);
@@ -459,8 +472,10 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jt_minimo.setName("jt_minimo"); // NOI18N
         jt_minimo.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jt_minimo);
-        jt_minimo.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jt_minimo.getColumnModel().getColumn(3).setPreferredWidth(30);
+        if (jt_minimo.getColumnModel().getColumnCount() > 0) {
+            jt_minimo.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jt_minimo.getColumnModel().getColumn(3).setPreferredWidth(30);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 100));
 
@@ -506,8 +521,10 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jTable2.setName("jTable2"); // NOI18N
         jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable2);
-        jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jTable2.getColumnModel().getColumn(3).setPreferredWidth(30);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTable2.getColumnModel().getColumn(3).setPreferredWidth(30);
+        }
 
         jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 100));
 
@@ -522,7 +539,6 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 500, 180));
 
-        jl_minimo.setFont(new java.awt.Font("Dialog", 1, 12));
         jl_minimo.setText("jLabel6");
         jl_minimo.setName("jl_minimo"); // NOI18N
         jPanel1.add(jl_minimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
@@ -561,10 +577,12 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jt_ideal.setName("jt_ideal"); // NOI18N
         jt_ideal.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jt_ideal);
-        jt_ideal.getColumnModel().getColumn(0).setPreferredWidth(150);
-        jt_ideal.getColumnModel().getColumn(1).setPreferredWidth(150);
-        jt_ideal.getColumnModel().getColumn(2).setPreferredWidth(40);
-        jt_ideal.getColumnModel().getColumn(3).setPreferredWidth(20);
+        if (jt_ideal.getColumnModel().getColumnCount() > 0) {
+            jt_ideal.getColumnModel().getColumn(0).setPreferredWidth(150);
+            jt_ideal.getColumnModel().getColumn(1).setPreferredWidth(150);
+            jt_ideal.getColumnModel().getColumn(2).setPreferredWidth(40);
+            jt_ideal.getColumnModel().getColumn(3).setPreferredWidth(20);
+        }
 
         jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 470, 100));
 
@@ -610,8 +628,10 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jTable4.setName("jTable4"); // NOI18N
         jTable4.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTable4);
-        jTable4.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jTable4.getColumnModel().getColumn(3).setPreferredWidth(30);
+        if (jTable4.getColumnModel().getColumnCount() > 0) {
+            jTable4.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTable4.getColumnModel().getColumn(3).setPreferredWidth(30);
+        }
 
         jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 100));
 
@@ -626,7 +646,6 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 500, 180));
 
-        jl_quantidade.setFont(new java.awt.Font("Dialog", 1, 12));
         jl_quantidade.setText("   ");
         jl_quantidade.setName("jl_quantidade"); // NOI18N
         jPanel4.add(jl_quantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
@@ -663,12 +682,12 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
             }
         });
         jmi_fornecedor.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jmi_fornecedorAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         menu_cadastros.add(jmi_fornecedor);
@@ -900,8 +919,8 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
 
         setJMenuBar(jMB_Cadastro);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-1233)/2, (screenSize.height-745)/2, 1233, 745);
+        setSize(new java.awt.Dimension(1233, 745));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuitem_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuitem_entradaActionPerformed
@@ -1284,6 +1303,11 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     Relatorios relatorio = new Relatorios();
     relatorio.setVencidos();
 }//GEN-LAST:event_jButton5ActionPerformed
+    RequisicaoGerenciarGUI requisicaoGerenciarGUI;
+    private void jb_ajuste1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ajuste1ActionPerformed
+        requisicaoGerenciarGUI = new RequisicaoGerenciarGUI();
+        requisicaoGerenciarGUI.setVisible(true);
+    }//GEN-LAST:event_jb_ajuste1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1358,6 +1382,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JTable jTable4;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jb_ajuste;
+    private javax.swing.JButton jb_ajuste1;
     private javax.swing.JButton jb_entrada;
     private javax.swing.JButton jb_saida;
     private javax.swing.JButton jb_saidaArmazem;

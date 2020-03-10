@@ -141,22 +141,22 @@ public class UsuárioGUI extends javax.swing.JFrame {
                 jPanel3.setName("jPanel3"); // NOI18N
 
                 buttonGroup1.add(jrb_codigo);
-                jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12));
+                jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
                 jrb_codigo.setSelected(true);
                 jrb_codigo.setText("Código");
                 jrb_codigo.setName("jrb_codigo"); // NOI18N
 
                 buttonGroup1.add(jrb_descricao);
-                jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12));
+                jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
                 jrb_descricao.setText("Descrição");
                 jrb_descricao.setName("jrb_descricao"); // NOI18N
 
                 buttonGroup1.add(jrb_detalhamento);
-                jrb_detalhamento.setFont(new java.awt.Font("Dialog", 0, 12));
+                jrb_detalhamento.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
                 jrb_detalhamento.setText("Específica");
                 jrb_detalhamento.setName("jrb_detalhamento"); // NOI18N
 
-                jLabel1.setFont(new java.awt.Font("Dialog", 0, 12));
+                jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
                 jLabel1.setText("Parâmetro");
                 jLabel1.setName("jLabel1"); // NOI18N
 
@@ -261,8 +261,8 @@ public class UsuárioGUI extends javax.swing.JFrame {
                 });
                 getContentPane().add(jb_novo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, 35));
 
-                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                setBounds((screenSize.width-630)/2, (screenSize.height-373)/2, 630, 373);
+                setSize(new java.awt.Dimension(630, 373));
+                setLocationRelativeTo(null);
             }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

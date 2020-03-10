@@ -73,6 +73,8 @@ public class ProdutoDAO {
             + "(grupo.idgrupo=grupo_idgrupo) & (unidademedida.idunidademedida=unidademedida_idunidademedida) & (subgrupo.idSubGrupo=id_SubGrupo) ";
     private String alteraProduto = "UPDATE produto SET descProduto = ?, concentracao = ?, estMinimo = ?, estIdeal = ?, grupo_idgrupo = ?, unidadeMedida_idunidadeMedida = ?, id_SubGrupo = ? WHERE idproduto = ?";
     private String excluiProduto = "DELETE FROM produto WHERE idproduto = ?";
+    
+    private String updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`? ? WHERE idproduto = ?";
 
     public void cadastraProduto(ProdutoModel produto) {
         try {
@@ -505,5 +507,29 @@ public List<ProdutoModel> listarProdutoComercial(String nome_produto) {
             e.printStackTrace();
         }
         return produto;
+    }
+    
+    public void updateQuatidade(int qtd,int id,String operacao,String produto){
+        try{
+            if(operacao.equals("+")){
+                updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`+? WHERE descProduto = ?";
+            }else{                
+                updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`-? WHERE idproduto = ?";
+            }
+            
+            Conexao conexao = new Conexao();
+            pstm = (com.mysql.jdbc.PreparedStatement) conexao.conecta().prepareStatement(updateQuantidade);           
+            pstm.setInt(1,qtd);
+            if(produto.equals("")){
+                pstm.setInt(2, id);
+            }else{                
+                pstm.setString(2, produto);
+            }
+            
+            pstm.executeUpdate();
+            conexao.desconecta();
+        }catch(Exception ex){
+            System.out.println("Erro:"+ex);
+        }
     }
 }

@@ -98,7 +98,7 @@ public class EntradaGUI extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(jrb_notaFiscal);
-        jrb_notaFiscal.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_notaFiscal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_notaFiscal.setSelected(true);
         jrb_notaFiscal.setText("Nota Fiscal");
         jrb_notaFiscal.setName("jrb_notaFiscal"); // NOI18N
@@ -110,18 +110,18 @@ public class EntradaGUI extends javax.swing.JFrame {
         jPanel1.add(jrb_notaFiscal, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 27, -1, -1));
 
         buttonGroup1.add(jrb_detalhado);
-        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_detalhado.setText("Específica");
         jrb_detalhado.setName("jrb_detalhado"); // NOI18N
         jPanel1.add(jrb_detalhado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
         buttonGroup1.add(jrb_descricao);
-        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_descricao.setText("Descrição");
         jrb_descricao.setName("jrb_descricao"); // NOI18N
         jPanel1.add(jrb_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
-        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12));
+        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jl_pesquisar_destino.setText("Parâmetro");
         jl_pesquisar_destino.setName("jl_pesquisar_destino"); // NOI18N
         jPanel1.add(jl_pesquisar_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 62, -1, -1));
@@ -188,11 +188,13 @@ public class EntradaGUI extends javax.swing.JFrame {
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
+        }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 688, 150));
 
@@ -232,17 +234,19 @@ public class EntradaGUI extends javax.swing.JFrame {
                 jTable2.setName("jTable2"); // NOI18N
                 jTable2.getTableHeader().setReorderingAllowed(false);
                 jScrollPane3.setViewportView(jTable2);
-                jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
-                jTable2.getColumnModel().getColumn(1).setPreferredWidth(30);
-                jTable2.getColumnModel().getColumn(2).setPreferredWidth(100);
-                jTable2.getColumnModel().getColumn(3).setPreferredWidth(30);
-                jTable2.getColumnModel().getColumn(4).setPreferredWidth(30);
-                jTable2.getColumnModel().getColumn(5).setPreferredWidth(30);
+                if (jTable2.getColumnModel().getColumnCount() > 0) {
+                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
+                    jTable2.getColumnModel().getColumn(1).setPreferredWidth(30);
+                    jTable2.getColumnModel().getColumn(2).setPreferredWidth(100);
+                    jTable2.getColumnModel().getColumn(3).setPreferredWidth(30);
+                    jTable2.getColumnModel().getColumn(4).setPreferredWidth(30);
+                    jTable2.getColumnModel().getColumn(5).setPreferredWidth(30);
+                }
 
                 getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 688, 166));
 
-                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                setBounds((screenSize.width-752)/2, (screenSize.height-568)/2, 752, 568);
+                setSize(new java.awt.Dimension(752, 568));
+                setLocationRelativeTo(null);
             }// </editor-fold>//GEN-END:initComponents
 
     private void jb_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_buscarActionPerformed
