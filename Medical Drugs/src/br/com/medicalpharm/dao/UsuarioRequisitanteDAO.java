@@ -5,15 +5,13 @@
  */
 package br.com.medicalpharm.dao;
 
-import br.com.medicalpharm.model.RequisicoesModel;
-import br.com.medicalpharm.model.RequisicoesProdutoModel;
+
 import br.com.medicalpharm.model.UsuarioRequisitanteModel;
 import br.com.medicalpharm.util.Conexao;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,7 +25,6 @@ public class UsuarioRequisitanteDAO {
     
     private String cadastraUsuario = "INSERT INTO `usuario_requisitor`(`nome`, `cpf`) VALUES (?,?)";
     private String alterarUsuario = "UPDATE `usuario_requisitor` SET `nome`= ?,`cpf`= ? WHERE codigo_requisitor = ?";
-    private String verificarCodigo = "SELECT `codigo_requisitor` FROM `usuario_requisitor` WHERE codigo_requisitor = ?";
     private String buscarNome = "SELECT * FROM `usuario_requisitor` WHERE nome LIKE ?";
     private String buscarCpf = "SELECT * FROM `usuario_requisitor` WHERE cpf LIKE";
     private String buscarRequisitante = "SELECT `nome` FROM `usuario_requisitor` WHERE codigo_requisitor = ?";
@@ -37,8 +34,7 @@ public class UsuarioRequisitanteDAO {
 
             Conexao conexao = new Conexao();
             
-            pstm = (PreparedStatement) conexao.conecta().prepareStatement(cadastraUsuario);
-           // pstm.setInt(1, usuario.getCodigo_requisitante());
+            pstm = (PreparedStatement) conexao.conecta().prepareStatement(cadastraUsuario);           
             pstm.setString(1, usuario.getNome_requisitante());
             pstm.setString(2, usuario.getCpf());            
             pstm.executeUpdate();
@@ -64,45 +60,12 @@ public class UsuarioRequisitanteDAO {
             conexao.desconecta();                        
             
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Não foi possivel gravar");
+            JOptionPane.showMessageDialog(null, "Não foi possivel gravar\n"+erro);
 
         }
     }
     
-    public int gerarCodigo(){
-        try {            
-            boolean cod = true;
-            Random gerador = new Random();
-            
-            Conexao conexao = new Conexao();
-            
-            while(cod){
-                int resultado = 0;
-                int codigo = gerador.nextInt((999999 - 100000) + 1) + 100000;
-                pstm = (PreparedStatement) conexao.conecta().prepareStatement(verificarCodigo);
-                pstm.setInt(1, codigo);                   
-                rs = pstm.executeQuery();
-                while (rs.next()) {
-                    if(rs.getInt("codigo_requisitor") == codigo){
-                        resultado++;
-                    }
-                }
-                if(resultado == 0){
-                    conexao.desconecta();
-                    return codigo;
-                }
-                
-            }
-            //conexao.desconecta();
-           
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Não foi possivel gravar");
-          
-        }
-        return 0;
-        
-    }
-    
+   
     public List<UsuarioRequisitanteModel> listarUsuarios(String parametro){
         List<UsuarioRequisitanteModel> usuario = new ArrayList();
         try {

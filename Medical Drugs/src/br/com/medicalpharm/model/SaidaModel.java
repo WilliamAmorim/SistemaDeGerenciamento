@@ -26,6 +26,24 @@ public class SaidaModel {
     private List<SaidaItemModel> itensSaida;
     private Integer idrequisitante;
     private String NomeRequisitante;
+    private Integer codigoVeiculo;
+    private String descricaoVeiculo;
+
+    public String getDescricaoVeiculo() {
+        return descricaoVeiculo;
+    }
+
+    public void setDescricaoVeiculo(String descricaoVeiculo) {
+        this.descricaoVeiculo = descricaoVeiculo;
+    }
+
+    public Integer getCodigoVeiculo() {
+        return codigoVeiculo;
+    }
+
+    public void setCodigoVeiculo(Integer codigoVeiculo) {
+        this.codigoVeiculo = codigoVeiculo;
+    }
 
     public String getNomeRequisitante() {
         return NomeRequisitante;

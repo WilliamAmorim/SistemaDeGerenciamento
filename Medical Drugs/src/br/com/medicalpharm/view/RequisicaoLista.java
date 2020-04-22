@@ -32,7 +32,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
      * Creates new form RequisicoesLista
      */
     public RequisicaoLista() {
-        initComponents();        
+        initComponents();           
         listarRequisicoesAction();
         this.setLocationRelativeTo(null);        
     }
@@ -65,7 +65,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
         jb_novo4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Requisição/Devolução");
+        setTitle("Requisições");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -249,9 +249,13 @@ public class RequisicaoLista extends javax.swing.JFrame {
             }// </editor-fold>//GEN-END:initComponents
 
     private void jb_novo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_novo3ActionPerformed
-        
+   // if(jTable2.getRowCount() > 1){            
+            DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+            modelo.setNumRows(0);
+     //   }
         RequisicaoNovaGUI abrirTela = new RequisicaoNovaGUI();
             abrirTela.requisicaoLista = this;
+            abrirTela.verificarUpdata();
             this.setEnabled(false);
             abrirTela.setVisible(true);        
     }//GEN-LAST:event_jb_novo3ActionPerformed
@@ -375,10 +379,10 @@ public class RequisicaoLista extends javax.swing.JFrame {
     List<RequisicoesModel> requisicoes;
     Data data = new Data();
     public void listarRequisicoes(String opcaoPesquisa){
-        if(jTable1.getRowCount() > 1){
+      //  if(jTable1.getRowCount() > 1){
             DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
             modelo.setNumRows(0);
-        }                
+     //   }                
         RequisicoesProdutoDAO d = new RequisicoesProdutoDAO();
         RequisicoesDAO requi = new RequisicoesDAO();        
         requisicoes = requi.listarRequisicoes(tf_pesquisar_requisicao.getText(),opcaoPesquisa);        
@@ -397,10 +401,10 @@ public class RequisicaoLista extends javax.swing.JFrame {
     }
 
     public void listaProdutosRequicao(){  
-        if(jTable2.getRowCount() > 1){            
+      //  if(jTable2.getRowCount() > 1){            
             DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
             modelo.setNumRows(0);
-        }     
+      //  }     
         
 
         RequisicoesProdutoDAO d = new RequisicoesProdutoDAO();

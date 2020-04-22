@@ -142,7 +142,7 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
 
     private void devolverProduto(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_devolverProduto
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {  
-            this.devolver = new DevolverProduto();
+            this.devolver = new RequisicaoQtdDevolvidaGUI();
             abrirDevolucao(n);            
        }   
     }//GEN-LAST:event_devolverProduto
@@ -218,7 +218,7 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
         try{
             jTable1.setValueAt(qtd, index, 3);        
             moverLinha(index+1);                 
-            this.devolver = new DevolverProduto();
+            this.devolver = new RequisicaoQtdDevolvidaGUI();
             moverLinha(index+1);        
             completeTask();            
         }catch(Exception ex){
@@ -261,11 +261,11 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
             RequisicoesDAO cadastrar = new  RequisicoesDAO();
             cadastrar.cadastrarNovaRequisicao(novaRequisicao, criarListaProdutos(),true);
             JOptionPane.showMessageDialog(null, "Devolução concluida!");
+            
             int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
             if (selectedOption == JOptionPane.YES_NO_OPTION) {
                 Relatorios relatorio = new Relatorios();
-                relatorio.relatorioDevolucaoRequisicao(Integer.parseInt(codigo), new java.sql.Date(new java.util.Date().getTime()));
-                
+                relatorio.relatorioDevolucaoRequisicao(Integer.parseInt(codigo), new java.sql.Date(new java.util.Date().getTime()));                
             }
             janelaPai.setEnabled(true);
                 janelaPai.listarRequisicoesAction();
@@ -275,7 +275,7 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
         }
     }
     
-    DevolverProduto devolver = null;
+    RequisicaoQtdDevolvidaGUI devolver = null;
     public void abrirDevolucao(boolean novo){       
         try{                           
                 devolver.index = jTable1.getSelectedRow();

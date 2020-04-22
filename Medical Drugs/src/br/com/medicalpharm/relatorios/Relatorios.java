@@ -21,6 +21,7 @@ import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
+
 /**
  *
  * @author ALENCAR
@@ -28,6 +29,7 @@ import net.sf.jasperreports.view.JasperViewer;
 public class Relatorios {
 PreparedStatement pstm;
 ResultSet rs;
+private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical Drugs/jasper/";
 
     public void setRelatorioEstoqueProduto(){
         try{
@@ -45,7 +47,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ItensEstoqueProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ItensEstoqueProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -72,7 +74,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ItensEstoqueProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ItensEstoqueProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -102,7 +104,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ItensEstoqueGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ItensEstoqueGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -129,7 +131,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ItensEstoqueGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ItensEstoqueGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -159,7 +161,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ListagemProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ListagemProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -186,7 +188,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ListagemProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ListagemProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -213,7 +215,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ListagemGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ListagemGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -240,7 +242,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ListagemGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ListagemGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -274,7 +276,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/Grupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"Grupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -301,7 +303,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueMinimoProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueMinimoProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -328,7 +330,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueMinimoProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueMinimoProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -356,7 +358,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueMinimoGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueMinimoGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -383,7 +385,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueMinimoGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueMinimoGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -415,7 +417,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueIdealProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueIdealProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -442,7 +444,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueIdealProduto.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueIdealProduto.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -470,7 +472,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueIdealGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueIdealGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -497,7 +499,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueIdealGrupo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueIdealGrupo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -537,7 +539,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/MovimentoDestino.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"MovimentoDestino.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -584,7 +586,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/MovimentoDestino.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"MovimentoDestino.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -614,7 +616,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/ProdutosVencidos.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"ProdutosVencidos.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -641,7 +643,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/relatorioSaida.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"relatorioSaida.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -677,7 +679,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/Média.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"Média.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -714,7 +716,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/Média Destino.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"Média Destino.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -749,7 +751,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/RetiradaConsumo.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"RetiradaConsumo.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -787,7 +789,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/RetiradaConsumoDestino.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"RetiradaConsumoDestino.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -823,7 +825,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/RetiradaDescarte.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"RetiradaDescarte.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -860,7 +862,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/RetiradaDescarteDestino.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"RetiradaDescarteDestino.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -894,7 +896,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/AVencer.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"AVencer.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -931,7 +933,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/AVencerArmazem.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"AVencerArmazem.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -966,7 +968,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/AVencerArmazem.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"AVencerArmazem.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -994,7 +996,7 @@ ResultSet rs;
             if(totalRegistro>0){
                 JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                 Map parametros = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("C:/Medical Drugs/jasper/EstoqueArmazem.jasper", new HashMap(), jrRS);
+                JasperPrint jasperPrint = JasperFillManager.fillReport(url+"EstoqueArmazem.jasper", new HashMap(), jrRS);
                 JasperViewer.viewReport(jasperPrint, false);
             }else{
                     JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -1020,7 +1022,7 @@ ResultSet rs;
                 if(totalRegistro>0){
                     JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                     Map parametros = new HashMap();
-                    JasperPrint jasperPrint = JasperFillManager.fillReport("C:/medicaPharm/Medical-Pharm/jasper/ListagemRequisicao.jasper", new HashMap(), jrRS);
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(url+"relatorio_requisicao.jasper", new HashMap(), jrRS);
                     JasperViewer.viewReport(jasperPrint, false);
                 }else{
                         JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -1067,7 +1069,8 @@ ResultSet rs;
                 if(totalRegistro>0){
                     JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                     Map parametros = new HashMap();
-                    JasperPrint jasperPrint = JasperFillManager.fillReport("C:/medicaPharm/Medical-Pharm/jasper/relatorioDevolucaoProduto.jasper", new HashMap(), jrRS);
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(url+"relatorioDevolucaoProduto.jasper", new HashMap(), jrRS);
+                    //C:\medicaPharm\Medical Drugs\jasper
                     JasperViewer.viewReport(jasperPrint, false);
                 }else{
                         JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -1102,7 +1105,7 @@ ResultSet rs;
              
                
                 pstm = (PreparedStatement) conexao.conecta().prepareStatement(consulta);
-                  pstm.setInt(1, idRequisicao);
+                pstm.setInt(1, idRequisicao);
                 pstm.setInt(2, idRequisicao);
                 rs = pstm.executeQuery();
                 rs.afterLast();//mover apos a ultima linha
@@ -1112,7 +1115,7 @@ ResultSet rs;
                 if(totalRegistro>0){
                     JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                     Map parametros = new HashMap();
-                    JasperPrint jasperPrint = JasperFillManager.fillReport("C:/medicaPharm/Medical-Pharm/jasper/relatorioNovaRequisicao.jasper", new HashMap(), jrRS);
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(url+"relatorioNovaRequisicao.jasper", new HashMap(), jrRS);
                     JasperViewer.viewReport(jasperPrint, false);
                 }else{
                         JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
@@ -1159,7 +1162,7 @@ ResultSet rs;
                 if(totalRegistro>0){
                     JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
                     Map parametros = new HashMap();
-                    JasperPrint jasperPrint = JasperFillManager.fillReport("C:/medicaPharm/Medical-Pharm/jasper/relatorioEditarRequisicao.jasper", new HashMap(), jrRS);
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(url+"relatorioEditarRequisicao.jasper", new HashMap(), jrRS);
                     JasperViewer.viewReport(jasperPrint, false);
                 }else{
                         JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");

@@ -1330,7 +1330,7 @@ private void jmi_recoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }//GEN-LAST:event_jb_ajuste1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        UsuarioRequisitanteGerenciarGUI abrir = new UsuarioRequisitanteGerenciarGUI();
+        RequisitanteGerenciarGUI abrir = new RequisitanteGerenciarGUI();
         abrir.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 

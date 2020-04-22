@@ -152,9 +152,8 @@ public class RequisicoesProdutoDAO {
             pstm.setString(3,produto.get(i).getProduto());
             pstm.setInt(4,produto.get(i).getQtd());
             pstm.setDate(5, (Date) produto.get(i).getData_devolucao());
-
             pstm.executeUpdate();
-            }
+        }
             conexao.desconecta();            
             
             System.out.println("cadastro ok");

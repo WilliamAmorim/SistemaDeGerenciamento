@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 public class SaidaDAO {
 
     PreparedStatement pstm;
-    private String cadastraSaida = "INSERT INTO saida(dataRetirada, destino_iddestino,idUsuario_requisitor)VALUES(?,?,?)";
+    private String cadastraSaida = "INSERT INTO saida(dataRetirada, destino_iddestino,idUsuario_requisitor,codigo_veiculo)VALUES(?,?,?,?)";
     
     private String cadastraArmazem = "INSERT INTO tbarmazem(codDestino,codProduto,tbarmazem.quantidade,tbarmazem.vencimento)VALUES(?,?,?,?)";
     
@@ -29,8 +29,8 @@ public class SaidaDAO {
     //private String consultaEstoque = "SELECT * FROM `estoque` WHERE `produto_idproduto` = 10 AND `quantidade`<> 0 ORDER BY `vencimento`";
     private String consultaQuantidade = "SELECT * FROM produto WHERE idproduto = ?";
     private String cadastroQuantidade = "UPDATE produto SET quantidade = ? WHERE idproduto = ?";
-    private String consultaDestino = "SELECT idsaida, dataRetirada, destino.idDestino, destino.descDestino ,usuario_requisitor.nome FROM "
-            + "saida, destino, usuario_requisitor WHERE (destino.descDestino LIKE ?) & (destino.idDestino=destino_idDestino) & (saida.idUsuario_requisitor = usuario_requisitor.codigo_requisitor)";
+    private String consultaDestino = "SELECT idsaida, dataRetirada, destino.idDestino, destino.descDestino ,usuario_requisitor.nome,veiculo.descricao FROM "
+            + "saida, destino, usuario_requisitor,veiculo WHERE (destino.descDestino LIKE ?) & (destino.idDestino=destino_idDestino) & (saida.idUsuario_requisitor = usuario_requisitor.codigo_requisitor) & (saida.codigo_veiculo = veiculo.codigo)";
 //        private String consultaDestinoDescricao = "SELECT idsaida, dataRetirada, destino.idDestino, destino.descDestino FROM "
 //                + "saida, destino WHERE (destino.descDestino LIKE ?) & (destino.idDestino=destino_idDestino)";
     private String consultaDestinoCodigo = "SELECT idsaida, dataRetirada, destino.idDestino, destino.descDestino "
@@ -50,6 +50,7 @@ public class SaidaDAO {
             pstm.setDate(1, (java.sql.Date) dataSaida);
             pstm.setInt(2, saida.getDestino().getCod_destino());
             pstm.setInt(3,saida.getIdrequisitante());
+            pstm.setInt(4,saida.getCodigoVeiculo());
             pstm.executeUpdate();
             pstm.close();
             conexao.desconecta();
@@ -211,7 +212,8 @@ public class SaidaDAO {
                 sai.setDestino(new ArmazemModel(rs.getInt("destino.idDestino"), rs.getString("destino.descDestino")));
                 sai.setDataSaida(rs.getDate("dataRetirada"));
                 sai.setIdsaida(rs.getInt("idSaida"));
-                sai.setNomeRequisitante(rs.getString("nome"));
+                sai.setNomeRequisitante(rs.getString("nome"));   
+                sai.setDescricaoVeiculo(rs.getString("descricao"));
                 saidas.add(sai);
             }
             rs.close();

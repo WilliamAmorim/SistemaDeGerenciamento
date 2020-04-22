@@ -7,7 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Requisi&#xe7;&#xe3;o/Devolu&#xe7;&#xe3;o"/>
+    <Property name="title" type="java.lang.String" value="Requisi&#xe7;&#xf5;es"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>

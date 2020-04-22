@@ -16,6 +16,7 @@ import br.com.medicalpharm.model.ProdutoModel;
 import br.com.medicalpharm.model.SaidaItemModel;
 import br.com.medicalpharm.model.SaidaModel;
 import br.com.medicalpharm.model.UsuarioRequisitanteModel;
+import br.com.medicalpharm.model.VeiculoModel;
 import br.com.medicalpharm.util.ItemDbGrid;
 import br.com.medicalpharm.util.LimitadorTexto;
 import java.awt.event.KeyEvent;
@@ -131,6 +132,11 @@ public class SaidaEstoqueGUI extends javax.swing.JFrame implements SaidaEstoqueG
         jtf_usuarioRequisitante = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jtf_codigoVeiculo = new javax.swing.JTextField();
+        jtf_veiculo = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Saída de estoque principal");
@@ -281,7 +287,7 @@ public class SaidaEstoqueGUI extends javax.swing.JFrame implements SaidaEstoqueG
         jtf_estoque.setName("jtf_estoque"); // NOI18N
         jPanel2.add(jtf_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 70, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 430, 300));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 430, 300));
 
         jb_salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/gravar_registro.gif"))); // NOI18N
         jb_salvar.setText("Salvar");
@@ -364,7 +370,7 @@ public class SaidaEstoqueGUI extends javax.swing.JFrame implements SaidaEstoqueG
         getContentPane().add(jtf_codigoUsuarioRequisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 80, -1));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel8.setText("Codigo");
+        jLabel8.setText("Código");
         jLabel8.setName("jLabel8"); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 60, -1));
 
@@ -385,7 +391,31 @@ public class SaidaEstoqueGUI extends javax.swing.JFrame implements SaidaEstoqueG
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 30, -1));
 
-        setSize(new java.awt.Dimension(496, 595));
+        jtf_codigoVeiculo.setEnabled(false);
+        jtf_codigoVeiculo.setName("jtf_codigoVeiculo"); // NOI18N
+        getContentPane().add(jtf_codigoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 80, -1));
+
+        jtf_veiculo.setName("jtf_veiculo"); // NOI18N
+        getContentPane().add(jtf_veiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 290, -1));
+
+        jButton3.setText("...");
+        jButton3.setName("jButton3"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 30, -1));
+
+        jLabel10.setText("Código");
+        jLabel10.setName("jLabel10"); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        jLabel11.setText("Veiculo:");
+        jLabel11.setName("jLabel11"); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+
+        setSize(new java.awt.Dimension(496, 665));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -576,12 +606,20 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_jtf_quantidadeFocusLost
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        UsuariosRequisitanteConsultarGUI requi = new UsuariosRequisitanteConsultarGUI();
+        RequisitanteConsultarGUI requi = new RequisitanteConsultarGUI();
         requi.listarUsuarios(jtf_usuarioRequisitante.getText());
         requi.setSaidaEstoque(this);
         requi.saidaEstoque = this;
         requi.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        VeiculoConsultar2GUI mostrar = new VeiculoConsultar2GUI();
+        mostrar.listarVeiculos(jtf_veiculo.getText());
+        mostrar.setSaidaEstoque(this);
+        mostrar.saidaEstoque = this;
+        mostrar.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,7 +635,10 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -620,10 +661,12 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     private javax.swing.JTextField jtf_cod_arm;
     private javax.swing.JTextField jtf_codigo;
     private javax.swing.JTextField jtf_codigoUsuarioRequisitante;
+    private javax.swing.JTextField jtf_codigoVeiculo;
     private javax.swing.JTextField jtf_estoque;
     private javax.swing.JTextField jtf_produto;
     private javax.swing.JTextField jtf_quantidade;
     private javax.swing.JTextField jtf_usuarioRequisitante;
+    private javax.swing.JTextField jtf_veiculo;
     // End of variables declaration//GEN-END:variables
 
     public void statusTela(boolean status) {
@@ -685,6 +728,7 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
                 saida.setDestino(armazem);
                 saida.setDataSaida(new SimpleDateFormat("dd/MM/yyyy").parse(jftf_data.getText()));
                 saida.setIdrequisitante(Integer.parseInt(jtf_codigoUsuarioRequisitante.getText()));
+                saida.setCodigoVeiculo(Integer.parseInt(jtf_codigoVeiculo.getText()));                   
                 // saida.setItensSaida(itens);
                 //  controlSaida.cadastraSaida(saida);
                 saida = controlSaida.cadastraSaida(saida);
@@ -853,5 +897,10 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
         jtf_usuarioRequisitante.setText(requisitante.getNome_requisitante());
         jtf_codigoUsuarioRequisitante.setText(requisitante.getCodigo_requisitante()+"");
       
+    }
+    
+    public void carregarVeiculo(VeiculoModel veiculo){
+        jtf_codigoVeiculo.setText(veiculo.getCodigo()+"");
+        jtf_veiculo.setText(veiculo.getDescricao()+"");
     }
 }

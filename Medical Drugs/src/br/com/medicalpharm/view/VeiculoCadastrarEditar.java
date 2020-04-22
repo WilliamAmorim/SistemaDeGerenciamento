@@ -21,6 +21,8 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
     public VeiculoCadastrarEditar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
     }
     
     /**
@@ -167,8 +169,11 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
         //        janelapai.setVisible(true);
         //        janelapai.request();
         //        setVisible(false);
-         telaPai.setEnabled(true);
-         telaPai2.setEnabled(true);
+        if(telaPai != null){
+            telaPai.setEnabled(true);
+        }else{
+            telaPai2.setEnabled(true);
+        }
         setVisible(false);
 
     }//GEN-LAST:event_jb_cancelarActionPerformed
@@ -242,6 +247,9 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
             jtf_descricao.setText(descricao);
             jtf_placa.setText(placa);
             jtf_chassi.setText(chassi);
+            setTitle("Alterar Veiculo");
+        }else{
+            setTitle("Novo Veiculo");
         }
         
     }

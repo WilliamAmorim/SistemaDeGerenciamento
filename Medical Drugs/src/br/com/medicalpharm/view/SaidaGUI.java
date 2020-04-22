@@ -208,14 +208,14 @@ public class SaidaGUI extends javax.swing.JFrame {
 
                     },
                     new String [] {
-                        "Código", "Destino", "Requisitor", "Data"
+                        "Código", "Destino", "Requisitor", "Veiculo", "Data"
                     }
                 ) {
                     Class[] types = new Class [] {
-                        java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                        java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
                     };
                     boolean[] canEdit = new boolean [] {
-                        false, false, false, false
+                        false, false, false, false, false
                     };
 
                     public Class getColumnClass(int columnIndex) {
@@ -232,10 +232,10 @@ public class SaidaGUI extends javax.swing.JFrame {
                 jScrollPane3.setViewportView(jTable2);
                 jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
                 if (jTable2.getColumnModel().getColumnCount() > 0) {
-                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
+                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(40);
                     jTable2.getColumnModel().getColumn(1).setPreferredWidth(180);
                     jTable2.getColumnModel().getColumn(2).setPreferredWidth(100);
-                    jTable2.getColumnModel().getColumn(3).setPreferredWidth(50);
+                    jTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
                 }
 
                 getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 466, 128));
@@ -362,10 +362,11 @@ public class SaidaGUI extends javax.swing.JFrame {
                     saida.setDestino(saidas.get(i).getDestino());
                     saida.setDataSaida(saidas.get(i).getDataSaida());
                     saida.setNomeRequisitante(saidas.get(i).getNomeRequisitante());
+                    saida.setDescricaoVeiculo(saidas.get(i).getDescricaoVeiculo());
 
                     DefaultTableModel row = (DefaultTableModel) jTable2.getModel();
                     ItemDbGrid hashDbGrid = new ItemDbGrid(saida, saida.getDestino().getDesc_destino());
-                    row.addRow(new Object[]{saida.getIdsaida(), hashDbGrid,saida.getNomeRequisitante(), dataSaida});
+                    row.addRow(new Object[]{saida.getIdsaida(), hashDbGrid,saida.getNomeRequisitante(),saida.getDescricaoVeiculo(), dataSaida});
                 } catch (ParseException ex) {
                     Logger.getLogger(SaidaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -41,7 +41,7 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
         jb_ok = new javax.swing.JButton();
         jb_cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jLabel2.setText("Veiculos Encontrados");
@@ -127,7 +127,7 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_okActionPerformed
 
     private void jb_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cancelarActionPerformed
-        //        setVisible(false);
+            setVisible(false);
         //        if ((janelapai != null)) {
             //            janelapai.setEnabled(true);
             //            janelapai.setVisible(true);
@@ -207,18 +207,27 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
     }
     public VeiculoModel veiculo = new VeiculoModel();
     public RequisicaoNovaGUI  requiNova = null;
+    public SaidaEstoqueGUI saidaEstoque = null;
     RequisicaoNovaGUI_Interface reInterface;
+    SaidaEstoqueGUI_interface saInterface;
     public void pegarVeiculo(){
         veiculo.setCodigo(Integer.parseInt(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),0).toString().trim()));
         veiculo.setDescricao(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),1).toString().trim());
         veiculo.setChassi(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),2).toString().trim());
         veiculo.setPlaca(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),3).toString().trim());
-        reInterface.carregarVeiculo(veiculo);
+        if(requiNova != null){
+            reInterface.carregarVeiculo(veiculo);
+        }else if(saidaEstoque != null){
+            saInterface.carregarVeiculo(veiculo);
+        }
         setVisible(false);
     }
     
     public void setRequisicaoNova(RequisicaoNovaGUI_Interface re){
         reInterface = re;
+    }
+    public void setSaidaEstoque(SaidaEstoqueGUI_interface sa){
+        saInterface = sa;
     }
     
     

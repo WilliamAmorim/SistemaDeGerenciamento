@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Abr-2020 às 09:39
+-- Generation Time: 22-Abr-2020 às 21:42
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -543,9 +543,9 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (34, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA GOTAS', 10, 50, 2, 5, 13, 'BUSCOPAN COMPOSTO GOTAS', 1, 10),
 (35, 'DIPIRONA SODICA 500MG/ML (GOTAS)', 10, 50, 2, 5, 9, 'NOVALGINA - MAGNOPYROL', 1, 10),
 (36, 'METILDOPA 250MG', 0, 0, 2, 2, 40, '', 1, 10),
-(37, 'AMIODARONA 200MG', 10, 50, 2, 2, 45, '', 1, 10),
+(37, 'AMIODARONA 200MG', 10, 50, 2, 2, 25, '', 1, 10),
 (38, 'BUTILBROMETO DE ESCOPALAMINA+DIPIRONA SODICA', 10, 50, 2, 2, 70, 'BUSCOPAN COMPOSTO', 1, 10),
-(39, 'DICLOFENACO DE SODIO 50MG', 10, 50, 2, 2, 63, 'VOLTAREN', 1, 10),
+(39, 'DICLOFENACO DE SODIO 50MG', 10, 50, 2, 2, 53, 'VOLTAREN', 1, 10),
 (40, 'NIFEDIPINO 20 MG', 10, 50, 2, 2, 10, 'ADALAT', 1, 10),
 (41, 'ISOXSUPRINA 10MG', 10, 50, 2, 2, 15, 'INIBINA', 1, 10),
 (42, 'CAPTOPRIL 25 MG', 10, 50, 2, 2, 510, '', 1, 10),
@@ -554,7 +554,7 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (45, 'ERGOMETRINA 0,2MG/ML (AMP 1ML)', 10, 50, 2, 4, 60, 'ERGOTRATE', 1, 10),
 (46, 'PARACETAMOL 750MG', 10, 50, 2, 2, 120, 'TYLENOL', 1, 10),
 (47, 'DIPIRONA SODICA 500MG', 10, 50, 2, 2, 370, 'NOVALGINA - MAGNOPYROL', 1, 10),
-(48, 'ATROPINA 0,25MG/ML (AMP 1ML)', 10, 50, 2, 4, 94, '', 1, 5),
+(48, 'ATROPINA 0,25MG/ML (AMP 1ML)', 10, 50, 2, 4, 89, '', 1, 5),
 (49, 'METOCLOPRAMIDA 5MG/ML (AMP 2ML)', 10, 50, 2, 4, 18, 'PLASIL', 1, 10),
 (50, 'BROMOPRIDA 5MG/ML (AMP 2ML)', 10, 50, 2, 4, 283, 'PLAMET', 1, 10),
 (51, 'RANITIDINA 25MG/ML (AMP 2ML)', 10, 50, 2, 4, 72, '', 1, 10),
@@ -568,7 +568,7 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (59, 'ADRENALINA OU EPINEFRINA 1MG/ML (AMP 1ML)', 2, 3, 2, 4, 58, 'ADRENALINA', 1, 10),
 (60, 'DOPAMINA 5MG/ML (AMP 10ML)', 10, 50, 2, 4, 85, 'REVIVAN', 1, 10),
 (61, 'AMINOFILINA 24MG/ML (AMP 10ML)', 10, 50, 2, 4, 73, '', 1, 10),
-(62, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA', 10, 50, 2, 4, 230, 'BUSCOPAN COMPOSTO', 1, 10),
+(62, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA', 10, 50, 2, 4, 224, 'BUSCOPAN COMPOSTO', 1, 10),
 (63, 'DIPIRONA SODICA 500MG/ML (AMP 2ML)', 10, 50, 2, 4, 36, 'NOVALGINA - MAGNOPYROL', 1, 10),
 (64, 'CAMPO OPERATORIO 45X50CM', 10, 50, 1, 7, 100, 'COMPRESSA CIRURGICA GRANDE 45X50CM', 1, 1),
 (65, 'CAMPO OPERATORIO 23X25CM', 10, 50, 1, 7, 50, 'COMPRESSA CIRURGICA MEDIA 23X25CM', 1, 1),
@@ -577,16 +577,16 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (68, 'ATADURA DE CREPE 25CM', 10, 50, 1, 7, 96, '', 1, 1),
 (69, 'AGULHA 25X7', 10, 50, 1, 7, 0, '', 1, 1),
 (70, 'AGULHA 13X4,5', 10, 50, 1, 7, 70, '', 1, 1),
-(71, 'AGULHA 40X12', 10, 50, 1, 7, 60, '', 1, 1),
+(71, 'AGULHA 40X12', 10, 50, 1, 7, 53, '', 1, 1),
 (72, 'LAMINA DE BISTURI N° 15', 10, 50, 1, 7, 40, '', 1, 1),
 (73, 'LAMINA DE BISTURI N° 22', 10, 50, 1, 7, 400, '', 1, 1),
 (74, 'AGULHA PARA ANESTESIA ESPINHAL 25GX3,5', 10, 50, 1, 7, 0, '', 1, 1),
-(75, 'AGULHA PARA ANESTESIA ESPINHAL 27GX3,5', 10, 50, 1, 7, 12, '', 1, 1),
+(75, 'AGULHA PARA ANESTESIA ESPINHAL 27GX3,5', 10, 50, 1, 7, 10, '', 1, 1),
 (76, 'AGULHA PARA ANESTESIA ESPINHAL 23GX80', 10, 50, 1, 7, 2, '', 1, 1),
 (77, 'SERINGA 1 ML COM AGULHA', 10, 50, 1, 7, 136, '', 1, 1),
 (78, 'FITA ADESIVA PARA AUTOCLAVE', 10, 50, 1, 7, 5, '', 1, 1),
 (79, 'FITA ADESIVA 19MM', 10, 50, 1, 7, 8, 'FITA CREPE', 1, 1),
-(80, 'ALCOOL 70%', 10, 50, 1, 7, 10, '', 1, 1),
+(80, 'ALCOOL 70%', 10, 50, 1, 7, 8, '', 1, 1),
 (81, 'LUVA PROCEDIMENTO M', 10, 50, 1, 7, 300, '', 0.13, 1),
 (82, 'LAMINA PARA TRICOTOMIA', 10, 50, 1, 7, 45, '', 1, 1),
 (83, 'CLAMP UMBILICAL', 10, 20, 1, 7, 26, '', 1, 1),
@@ -637,7 +637,7 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (129, 'IODO 2%', 10, 50, 1, 5, 2, '', 1, 1),
 (130, 'VASELINA LIQUIDA', 2, 5, 1, 5, 1, '', 1, 1),
 (131, 'PVPI TOPICO', 10, 50, 1, 5, 1, 'PVPI OU POVIDINE TOPICO - TINTURA DE IODO 2%', 0, 1),
-(132, 'AMITRIPTILINA 25MG', 10, 50, 2, 2, 378, '', 1, 5),
+(132, 'AMITRIPTILINA 25MG', 10, 50, 2, 2, 371, '', 1, 5),
 (133, 'CARBAMAZEPINA 200MG', 10, 50, 2, 2, 690, 'TEGRETOL', 1, 5),
 (134, 'MEPERIDINA OU PETIDINA 50MG/ML (AMP 2ML)', 10, 50, 2, 4, 38, 'DOLANTINA - DOLOSAL', 1, 5),
 (135, 'PROMETAZINA 25MG', 10, 50, 2, 2, 160, 'FENERGAN', 1, 10),
@@ -754,12 +754,7 @@ CREATE TABLE `requisicao` (
 --
 
 INSERT INTO `requisicao` (`codigo_requisicao`, `veiculo`, `data_emissao`, `usuario_requisitor`, `usuario_estoquista`) VALUES
-(1, '2', '2020-03-16', '256481', '3'),
-(2, '1', '2020-03-16', '256481', '3'),
-(3, '2', '2020-03-18', '256481', '3'),
-(4, '2', '2020-03-18', '693177', '3'),
-(5, '2', '2020-03-18', '693177', '3'),
-(6, '1', '2020-03-28', '256481', '3');
+(1, '2', '2020-04-22', '1', '3');
 
 -- --------------------------------------------------------
 
@@ -781,51 +776,8 @@ CREATE TABLE `requisicoes` (
 --
 
 INSERT INTO `requisicoes` (`tipo`, `codigo_requisicao`, `id`, `produto`, `qtd`, `data`) VALUES
-('E', 1, 1, '76', 1, '2020-03-16'),
-('E', 1, 2, '43', 5, '2020-03-16'),
-('D', 1, 3, '43', 2, '2020-03-16'),
-('D', 1, 4, '43', 2, '2020-03-16'),
-('E', 2, 5, '75', 7, '2020-03-16'),
-('E', 2, 6, '3', 5, '2020-03-16'),
-('E', 2, 7, '14', 11, '2020-03-16'),
-('D', 2, 8, '75', 3, '2020-03-16'),
-('D', 2, 9, '3', 2, '2020-03-16'),
-('D', 2, 10, '14', 6, '2020-03-16'),
-('E', 2, 11, '33', 5, '2020-03-16'),
-('E', 3, 12, 'ACIDO ACETILSALICILICO 100MG', 5, '2020-03-18'),
-('E', 4, 13, 'ATROPINA 0,25MG/ML (AMP 1ML)', 3, '2020-03-18'),
-('E', 5, 14, '133', 5, '2020-03-18'),
-('E', 5, 15, '10', 3, '2020-03-18'),
-('E', 5, 16, '99', 8, '2020-03-18'),
-('D', 5, 17, '133', 2, '2020-03-18'),
-('D', 5, 18, '10', 2, '2020-03-18'),
-('D', 5, 19, '99', 1, '2020-03-18'),
-('D', 5, 20, '133', 2, '2020-03-18'),
-('D', 5, 21, '10', 1, '2020-03-18'),
-('D', 5, 22, '99', 1, '2020-03-18'),
-('D', 5, 23, '133', 1, '2020-03-18'),
-('D', 5, 24, '99', 2, '2020-03-18'),
-('D', 5, 25, '99', 2, '2020-03-18'),
-('D', 5, 26, '99', 2, '2020-03-19'),
-('D', 1, 27, '76', 1, '2020-03-19'),
-('D', 1, 28, '43', 1, '2020-03-19'),
-('E', 2, 29, '80', 9, '2020-03-19'),
-('E', 2, 30, '38', 5, '2020-03-19'),
-('E', 2, 31, '224', 8, '2020-03-19'),
-('E', 6, 32, '71', 4, '2020-03-28'),
-('D', 6, 33, '71', 4, '2020-03-28'),
-('D', 2, 34, '75', 2, '2020-03-29'),
-('D', 2, 35, '3', 2, '2020-03-29'),
-('D', 2, 36, '75', 1, '2020-03-29'),
-('E', 1, 37, '80', 4, '2020-04-09'),
-('E', 1, 38, '50', 7, '2020-04-09'),
-('E', 5, 39, '37', 5, '2020-04-09'),
-('E', 1, 40, '108', 10, '2020-04-09'),
-('D', 1, 41, '80', 1, '2020-04-09'),
-('D', 1, 42, '108', 5, '2020-04-09'),
-('D', 2, 43, '33', 2, '2020-04-09'),
-('D', 2, 44, '80', 1, '2020-04-09'),
-('D', 2, 45, '38', 3, '2020-04-09');
+('E', 1, 1, '75', 2, '2020-04-22'),
+('D', 1, 2, '75', 2, '2020-04-22');
 
 -- --------------------------------------------------------
 
@@ -837,24 +789,26 @@ CREATE TABLE `saida` (
   `idsaida` int(11) NOT NULL,
   `dataRetirada` date DEFAULT NULL,
   `destino_idDestino` int(11) NOT NULL,
-  `idUsuario_requisitor` int(11) NOT NULL
+  `idUsuario_requisitor` int(11) NOT NULL,
+  `codigo_veiculo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `saida`
 --
 
-INSERT INTO `saida` (`idsaida`, `dataRetirada`, `destino_idDestino`, `idUsuario_requisitor`) VALUES
-(1, '2011-12-06', 1, 256481),
-(2, '2011-12-07', 1, 256481),
-(3, '2011-12-07', 3, 256481),
-(4, '2011-12-07', 1, 256481),
-(5, '2011-12-08', 3, 256481),
-(6, '2011-12-09', 2, 256481),
-(7, '2011-12-08', 4, 256481),
-(8, '2011-12-10', 3, 256481),
-(9, '2020-04-08', 4, 256481),
-(10, '2012-05-01', 2, 256481);
+INSERT INTO `saida` (`idsaida`, `dataRetirada`, `destino_idDestino`, `idUsuario_requisitor`, `codigo_veiculo`) VALUES
+(1, '2011-12-06', 1, 1, 1),
+(2, '2011-12-07', 1, 1, 1),
+(3, '2011-12-07', 3, 1, 1),
+(4, '2011-12-07', 1, 1, 1),
+(5, '2011-12-08', 3, 1, 1),
+(6, '2011-12-09', 2, 1, 1),
+(7, '2011-12-08', 4, 1, 1),
+(8, '2011-12-10', 3, 1, 1),
+(9, '2020-04-08', 4, 1, 1),
+(10, '2012-05-01', 2, 1, 1),
+(11, '2001-02-12', 5, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -1039,7 +993,8 @@ INSERT INTO `saidaitem` (`quantidade`, `produto_idproduto`, `saida_idsaida`, `id
 (100, 81, 8, 123),
 (24, 120, 8, 124),
 (20, 74, 9, 125),
-(1, 75, 10, 126);
+(1, 75, 10, 126),
+(2, 80, 11, 127);
 
 -- --------------------------------------------------------
 
@@ -1219,7 +1174,8 @@ INSERT INTO `tbarmazem` (`codDestino`, `codProduto`, `quantidade`, `idarmazem`, 
 (3, 120, 24, 126, '2013-08-01'),
 (4, 74, 17, 127, '2014-01-01'),
 (4, 74, 3, 128, '2014-02-01'),
-(2, 75, 1, 129, '2013-10-01');
+(2, 75, 1, 129, '2013-10-01'),
+(5, 80, 2, 130, '2014-06-01');
 
 -- --------------------------------------------------------
 
@@ -1331,7 +1287,7 @@ INSERT INTO `tbvencimento` (`codProduto`, `data`, `lote`, `quantidade`, `idVenci
 (79, '2013-01-01', '2011', 5, 93),
 (79, '2013-01-01', '2012', 3, 94),
 (80, '2014-09-01', '0169', 12, 95),
-(80, '2014-06-01', '0093', 2, 96),
+(80, '2014-06-01', '0093', 0, 96),
 (81, '2013-12-01', 'PR445', 0, 97),
 (82, '2014-01-01', '2012', 45, 98),
 (83, '2012-09-01', '4919/10', 26, 99),
@@ -1595,8 +1551,7 @@ CREATE TABLE `usuario_requisitor` (
 --
 
 INSERT INTO `usuario_requisitor` (`codigo_requisitor`, `nome`, `cpf`) VALUES
-(256481, 'Ricardo', '796.872.120.20'),
-(693177, 'Andre', '056.571.850.99');
+(1, 'Ricardo', '708.852.431.70');
 
 -- --------------------------------------------------------
 
@@ -1617,7 +1572,8 @@ CREATE TABLE `veiculo` (
 
 INSERT INTO `veiculo` (`codigo`, `descricao`, `chassi`, `placa`) VALUES
 (1, 'Buggy 1.6/ TST/ RS 1.6 4-Lug.', '54824067494', 'MOJ-7137'),
-(2, 'Corona Mec.', '25293690605', 'HWC-2477');
+(2, 'Corona Mec.', '25293690605', 'HWC-2477'),
+(3, 'veiculo', '12', '65');
 
 -- --------------------------------------------------------
 
@@ -1830,6 +1786,12 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idusuario`);
 
 --
+-- Indexes for table `usuario_requisitor`
+--
+ALTER TABLE `usuario_requisitor`
+  ADD PRIMARY KEY (`codigo_requisitor`);
+
+--
 -- Indexes for table `veiculo`
 --
 ALTER TABLE `veiculo`
@@ -1885,19 +1847,19 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT for table `requisicao`
 --
 ALTER TABLE `requisicao`
-  MODIFY `codigo_requisicao` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `codigo_requisicao` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `requisicoes`
 --
 ALTER TABLE `requisicoes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `saida`
 --
 ALTER TABLE `saida`
-  MODIFY `idsaida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idsaida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `saidadestino`
@@ -1915,7 +1877,7 @@ ALTER TABLE `saidadestinoitem`
 -- AUTO_INCREMENT for table `saidaitem`
 --
 ALTER TABLE `saidaitem`
-  MODIFY `idsaidaItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `idsaidaItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `subgrupo`
@@ -1927,7 +1889,7 @@ ALTER TABLE `subgrupo`
 -- AUTO_INCREMENT for table `tbarmazem`
 --
 ALTER TABLE `tbarmazem`
-  MODIFY `idarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `idarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `tbvencimento`
@@ -1946,6 +1908,12 @@ ALTER TABLE `unidademedida`
 --
 ALTER TABLE `usuario`
   MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `usuario_requisitor`
+--
+ALTER TABLE `usuario_requisitor`
+  MODIFY `codigo_requisitor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `veiculo`

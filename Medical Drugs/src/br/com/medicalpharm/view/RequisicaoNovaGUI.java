@@ -22,8 +22,7 @@ import br.com.medicalpharm.model.UsuarioModel;
 import br.com.medicalpharm.relatorios.Relatorios;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.sql.Date;
-import java.time.LocalDate;
+
 
 /**
  *
@@ -434,7 +433,7 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     }//GEN-LAST:event_jb_cancelarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        UsuariosRequisitanteConsultarGUI requi = new UsuariosRequisitanteConsultarGUI();
+        RequisitanteConsultarGUI requi = new RequisitanteConsultarGUI();
         requi.listarUsuarios(jtf_usuarioRequisitante.getText());
         requi.setRequisicaoNova(this);
         requi.requiNova = this;
@@ -529,7 +528,8 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     public RequisicaoLista requisicaoLista = null;
     
     public void verificarUpdata(){
-         if(update){            
+         if(update){
+            setTitle("Editar Requisição");
             jtf_codigoRequisicao.setText(codigo_requisicao); 
             ArrayList retorno = new ArrayList();
             RequisicoesDAO r = new RequisicoesDAO();
@@ -543,9 +543,10 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
             jtf_veiculo.setText(retorno.get(3).toString());
             jtf_veiculo.setEnabled(false);
             
-            jButton1.setEnabled(false);jButton6.setEnabled(false);
-         
-        }
+            jButton1.setEnabled(false);jButton6.setEnabled(false);         
+        }else{
+            setTitle("Nova Requisição");
+         }
     }
     
     public void carregarUsuario(UsuarioRequisitanteModel requisitante){//UsuarioRequisitanteModel requisitante
@@ -571,10 +572,9 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     
     private void adicionarLinha(){
         int estoque = 0;
-        if(!"".equals(jtf_saldoEstoque.getText())){
+        if(jtf_saldoEstoque.getText().trim() != null){
             if(verificarProdutoRepetido(Integer.parseInt(jtf_codigoProduto.getText()),jtf_produto.getText())){
                 estoque = Integer.parseInt(jtf_saldoEstoque.getText());
-
                 if(verificarQtd((Integer)js_qtd.getValue(),estoque)){
                     DefaultTableModel row = (DefaultTableModel) jTable2.getModel();
                     row.addRow(new Object[]{jtf_codigoProduto.getText(),jtf_produto.getText(),js_qtd.getValue().toString()+""});
@@ -642,10 +642,14 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     }
     private boolean verificarProdutoRepetido(int produtoCodigo,String produtoNome){
         DefaultTableModel row = (DefaultTableModel) jTable2.getModel();
-        int re = 0;
-        for (int i = 0; i < row.getRowCount(); i++) {            
-            if(produtoCodigo  == Integer.parseInt(jtf_codigoRequisicao.getText())){
-                return false;
+        int re = 0;        
+        for (int i = 0; i < row.getRowCount(); i++) { 
+            System.out.println(produtoCodigo+"|"+Integer.parseInt((String) row.getValueAt(i, 0)));
+//            if(produtoCodigo  == Integer.parseInt(jtf_codigoProduto.getText())){
+//               
+//            }
+            if(produtoCodigo == Integer.parseInt((String) row.getValueAt(i, 0))){
+                return false; 
             }
         }        
         return  requisicaoLista.verificarProdutoRepetidoNome(produtoNome);       
