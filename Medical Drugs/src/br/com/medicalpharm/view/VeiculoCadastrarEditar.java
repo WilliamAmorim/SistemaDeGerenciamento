@@ -22,7 +22,11 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
+        if(update){
+            this.setTitle("Editar Veiculo");
+        }else{
+            this.setTitle("Cadastrar Veiculo");
+        }
         
     }
     
@@ -251,31 +255,34 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
     
     private void cadastrarNovoVeiculo(){
         try{
+            VeiculoDAO veiculoDAO = new VeiculoDAO();
             if(verifcarCampos()){
-                VeiculoModel veiculo = new VeiculoModel();
-                if(update){
-                    veiculo.setCodigo(Integer.parseInt(jtf_codigo.getText()));
-                }
-                veiculo.setDescricao(jtf_descricao.getText());
-                veiculo.setChassi(jtf_chassi.getText());
-                veiculo.setPlaca(jtf_placa.getText());
+                if(veiculoDAO.verificarVeiculo(jtf_chassi.getText())){
+                    VeiculoModel veiculo = new VeiculoModel();
+                    if(update){
+                        veiculo.setCodigo(Integer.parseInt(jtf_codigo.getText()));
+                    }
+                    veiculo.setDescricao(jtf_descricao.getText());
+                    veiculo.setChassi(jtf_chassi.getText());
+                    veiculo.setPlaca(jtf_placa.getText());
 
-                VeiculoDAO novoVeiculo = new VeiculoDAO();        
-                novoVeiculo.cadastarVeiculo(veiculo,update);
-                
-                if(telaPai != null){
-                    telaPai.listarVeiculos(0);
-                    telaPai.setEnabled(true);
-                }else{
-                    telaPai2.listarVeiculos("");
-                    telaPai2.setEnabled(true);
+                    VeiculoDAO novoVeiculo = new VeiculoDAO();        
+                    novoVeiculo.cadastarVeiculo(veiculo,update);
+
+                    if(telaPai != null){
+                        telaPai.listarVeiculos(0);
+                        telaPai.setEnabled(true);
+                    }else{
+                        telaPai2.listarVeiculos("");
+                        telaPai2.setEnabled(true);
+                    }
+                    if(update){
+                        JOptionPane.showMessageDialog(null, "Alterações salvas");                
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Cadastro concluido");
+                    }            
+                    setVisible(false);
                 }
-                if(update){
-                    JOptionPane.showMessageDialog(null, "Alterações salvas");                
-                }else{
-                    JOptionPane.showMessageDialog(null, "Cadastro concluido");
-                }            
-                setVisible(false);
             }
         }catch(Exception ex){
             //JOptionPane.showMessageDialog(null, "Ocorreu um erro");

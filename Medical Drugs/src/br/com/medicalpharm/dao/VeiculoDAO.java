@@ -25,6 +25,7 @@ public class VeiculoDAO {
     private String cadastrarVeiculo = "INSERT INTO `veiculo`(`descricao`, `chassi`, `placa`) VALUES (?,?,?)";
     private String editarVeiculo = "UPDATE `veiculo` SET `descricao`= ?,`chassi`=?,`placa`= ? WHERE codigo = ?";
     private String listaVeiculos = "SELECT * FROM `veiculo` WHERE ";
+    private String buscarChassiPlaca = "SELECT `chassi`, `placa` FROM `veiculo` WHERE chassi = ?";
     
     public List<VeiculoModel> listarVeiculos(String nomePesquisa,int parametro){
         List<VeiculoModel> veiculo = new ArrayList();
@@ -76,7 +77,30 @@ public class VeiculoDAO {
         }
     }
     
-    public void EditarVeiculo(){
+    private void burcarChassi(){
         
+    }           
+    
+    public boolean verificarVeiculo(String chassi){               
+        try{                                   
+            Conexao conexao = new Conexao();         
+            pstm = (PreparedStatement) conexao.conecta().prepareStatement(buscarChassiPlaca);
+            pstm.setString(1,chassi);         
+            rs = pstm.executeQuery();            
+            int i = 0;
+            while(rs.next()){
+               i++;
+            }
+            if(i > 0){
+                JOptionPane.showMessageDialog(null, "Chassi invalido");
+                return false;                                
+            }else if(i == 0){
+                return true;                
+            }
+            conexao.desconecta();
+        }catch(Exception ex){
+             //JOptionPane.showMessageDialog(null, "Não foi possivel listar os veiculos:"+ex);
+        }
+        return false;
     }
 }
