@@ -84,7 +84,7 @@ public class DestinoGUI extends javax.swing.JFrame {
         jb_alterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gerenciamento de armazéns");
+        setTitle("Gerenciamento de almoxarifado");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -99,26 +99,25 @@ public class DestinoGUI extends javax.swing.JFrame {
         jPanel1.setName("jPanel1"); // NOI18N
 
         buttonGroup1.add(jrb_codigo);
-        jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_codigo.setSelected(true);
         jrb_codigo.setText("Código");
         jrb_codigo.setName("jrb_codigo"); // NOI18N
 
         buttonGroup1.add(jrb_detalhado);
-        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_detalhado.setText("Específica");
         jrb_detalhado.setName("jrb_detalhado"); // NOI18N
 
         buttonGroup1.add(jrb_descricao);
-        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_descricao.setText("Descrição");
         jrb_descricao.setName("jrb_descricao"); // NOI18N
 
-        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12));
+        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jl_pesquisar_destino.setText("Parâmetro");
         jl_pesquisar_destino.setName("jl_pesquisar_destino"); // NOI18N
 
-        jb_buscar.setIcon(new javax.swing.ImageIcon("D:\\PROJETO\\Medical-Pharm\\imagens\\ok.png")); // NOI18N
         jb_buscar.setText("Ir");
         jb_buscar.setName("jb_buscar"); // NOI18N
         jb_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +149,7 @@ public class DestinoGUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jl_pesquisar_destino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jtf_pesquisar_destino, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                        .addComponent(jtf_pesquisar_destino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jb_buscar)))
                 .addContainerGap())
@@ -277,8 +276,8 @@ public class DestinoGUI extends javax.swing.JFrame {
                         .addContainerGap(29, Short.MAX_VALUE))
                 );
 
-                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                setBounds((screenSize.width-616)/2, (screenSize.height-374)/2, 616, 374);
+                setSize(new java.awt.Dimension(616, 374));
+                setLocationRelativeTo(null);
             }// </editor-fold>//GEN-END:initComponents
 
     private void jb_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_novoActionPerformed

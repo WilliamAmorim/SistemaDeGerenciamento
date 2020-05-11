@@ -171,7 +171,7 @@ public class RelatórioVencidosGUI extends javax.swing.JFrame {
         getContentPane().add(jrb_principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         buttonGroup1.add(jrb_armazem);
-        jrb_armazem.setText("Armazém");
+        jrb_armazem.setText("Almoxarifado");
         jrb_armazem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrb_armazemActionPerformed(evt);
@@ -189,11 +189,11 @@ public class RelatórioVencidosGUI extends javax.swing.JFrame {
         });
         getContentPane().add(jcb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 170, -1));
 
-        jLabel1.setText("Armazém:");
+        jLabel1.setText("Almoxarifado");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-302)/2, (screenSize.height-253)/2, 302, 253);
+        setSize(new java.awt.Dimension(302, 253));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     TelaPrincipal janelapai;
     private TelaPrincipal_Interface telaPrincipal;//Recebendo tela como parametro para atualização apos pesquisa

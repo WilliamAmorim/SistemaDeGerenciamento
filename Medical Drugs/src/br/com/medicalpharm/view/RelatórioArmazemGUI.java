@@ -99,7 +99,7 @@ public class RelatórioArmazemGUI extends javax.swing.JFrame {
         jRadioButton5.setText("jRadioButton5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Relatório do armazém");
+        setTitle("Relatório do almoxarifado");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -224,7 +224,7 @@ public class RelatórioArmazemGUI extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         buttonGroup2.add(jrb_estoque);
-        jrb_estoque.setText("Estoque por armazém");
+        jrb_estoque.setText("Estoque por almoxarifado");
         jrb_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrb_estoqueActionPerformed(evt);
@@ -232,8 +232,8 @@ public class RelatórioArmazemGUI extends javax.swing.JFrame {
         });
         getContentPane().add(jrb_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-318)/2, (screenSize.height-274)/2, 318, 274);
+        setSize(new java.awt.Dimension(318, 274));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jrb_mediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_mediaActionPerformed

@@ -282,7 +282,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/br/com/medicalpharm/image/icone-armazens-gerais.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Armaz&#xe9;m"/>
+                <Property name="text" type="java.lang.String" value="Almoxarifado"/>
                 <Property name="name" type="java.lang.String" value="jmi_destino" noResource="true"/>
               </Properties>
               <Events>
@@ -343,7 +343,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/br/com/medicalpharm/image/shoppingbasket_delete.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Sa&#xed;da de estoque por armaz&#xe9;m "/>
+                <Property name="text" type="java.lang.String" value="Sa&#xed;da de estoque por almoxarifado "/>
                 <Property name="name" type="java.lang.String" value="jMenuItem7" noResource="true"/>
               </Properties>
               <Events>
@@ -404,7 +404,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/br/com/medicalpharm/image/index_replace.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Armaz&#xe9;m"/>
+                <Property name="text" type="java.lang.String" value="Almoxarifado"/>
                 <Property name="name" type="java.lang.String" value="menuitem_vencidos" noResource="true"/>
               </Properties>
               <Events>
@@ -663,7 +663,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/medicalpharm/image/icone-armazens-gerais.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Armaz&#xe9;m"/>
+            <Property name="toolTipText" type="java.lang.String" value="Almoxarifado"/>
             <Property name="name" type="java.lang.String" value="jButton14" noResource="true"/>
           </Properties>
           <Events>
@@ -730,7 +730,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/com/medicalpharm/image/shoppingbasket_delete.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Sa&#xed;da de estoque por armaz&#xe9;m "/>
+            <Property name="toolTipText" type="java.lang.String" value="Sa&#xed;da de estoque por almoxarifado "/>
             <Property name="name" type="java.lang.String" value="jb_saidaArmazem" noResource="true"/>
           </Properties>
           <Events>

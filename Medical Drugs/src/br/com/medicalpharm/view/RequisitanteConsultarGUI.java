@@ -188,7 +188,7 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
     
     public void listarUsuarios(String usuarioRequisitante){
         UsuarioRequisitanteDAO requi = new UsuarioRequisitanteDAO();
-        usuarios = requi.listarUsuarios("%" + usuarioRequisitante.trim() + "%");//tf_pesquisar_requisicao.getText().trim()
+        usuarios = requi.listarUsuarios("%" + usuarioRequisitante.trim() + "%",1);//tf_pesquisar_requisicao.getText().trim()
         mostraRequisicoes(usuarios);
         
     }

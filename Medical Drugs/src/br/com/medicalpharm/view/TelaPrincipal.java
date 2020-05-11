@@ -336,7 +336,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jPanel2.add(jb_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 66, 57));
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/icone-armazens-gerais.png"))); // NOI18N
-        jButton14.setToolTipText("Armazém");
+        jButton14.setToolTipText("Almoxarifado");
         jButton14.setName("jButton14"); // NOI18N
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -375,7 +375,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 66, 57));
 
         jb_saidaArmazem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/shoppingbasket_delete.png"))); // NOI18N
-        jb_saidaArmazem.setToolTipText("Saída de estoque por armazém ");
+        jb_saidaArmazem.setToolTipText("Saída de estoque por almoxarifado ");
         jb_saidaArmazem.setName("jb_saidaArmazem"); // NOI18N
         jb_saidaArmazem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -756,7 +756,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         menu_cadastros.add(jMenuItem4);
 
         jmi_destino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/icone-armazens-gerais.png"))); // NOI18N
-        jmi_destino.setText("Armazém");
+        jmi_destino.setText("Almoxarifado");
         jmi_destino.setName("jmi_destino"); // NOI18N
         jmi_destino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -804,7 +804,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         menu_movimentos.add(jmi_saida);
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/shoppingbasket_delete.png"))); // NOI18N
-        jMenuItem7.setText("Saída de estoque por armazém ");
+        jMenuItem7.setText("Saída de estoque por almoxarifado ");
         jMenuItem7.setName("jMenuItem7"); // NOI18N
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -856,7 +856,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
         menu_relatórios.add(jMenuItem6);
 
         menuitem_vencidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/index_replace.png"))); // NOI18N
-        menuitem_vencidos.setText("Armazém");
+        menuitem_vencidos.setText("Almoxarifado");
         menuitem_vencidos.setName("menuitem_vencidos"); // NOI18N
         menuitem_vencidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1251,7 +1251,7 @@ public class TelaPrincipal extends javax.swing.JFrame implements TelaPrincipal_I
     }//GEN-LAST:event_menu_relatórios2ActionPerformed
 
     private void jb_saidaArmazemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_saidaArmazemActionPerformed
-        if(armazemGUI == false){
+     if(armazemGUI == false){
             armazem = new ArmazemGUI();
             armazem.setTelaPrincipal(this);
             armazem.setVisible(true);

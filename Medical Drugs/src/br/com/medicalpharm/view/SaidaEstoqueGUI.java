@@ -357,9 +357,9 @@ public class SaidaEstoqueGUI extends javax.swing.JFrame implements SaidaEstoqueG
         getContentPane().add(jtf_cod_arm, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 80, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel5.setText("Armazém");
+        jLabel5.setText("Almoxarifado");
         jLabel5.setName("jLabel5"); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 60, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 80, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/shoppingbasket_full.png"))); // NOI18N
         jLabel7.setName("jLabel7"); // NOI18N

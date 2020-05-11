@@ -73,7 +73,7 @@ public class DestinoConsultarGUI1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Consulta Armazém");
+        setTitle("Consulta Almoxarifado");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -156,8 +156,10 @@ public class DestinoConsultarGUI1 extends javax.swing.JFrame {
                     }
                 });
                 jScrollPane1.setViewportView(jTable1);
-                jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
-                jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);
+                if (jTable1.getColumnModel().getColumnCount() > 0) {
+                    jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
+                    jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);
+                }
 
                 getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 430, 330));
 
@@ -165,13 +167,13 @@ public class DestinoConsultarGUI1 extends javax.swing.JFrame {
                 jLabel1.setName("jLabel1"); // NOI18N
                 getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 60));
 
-                jLabel2.setFont(new java.awt.Font("Dialog", 0, 36));
-                jLabel2.setText("Armazéns encontrados");
+                jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+                jLabel2.setText("Almoxarifados encontrados");
                 jLabel2.setName("jLabel2"); // NOI18N
-                getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+                getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 390, -1));
 
-                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                setBounds((screenSize.width-516)/2, (screenSize.height-535)/2, 516, 535);
+                setSize(new java.awt.Dimension(516, 535));
+                setLocationRelativeTo(null);
             }// </editor-fold>//GEN-END:initComponents
 
     private void jb_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_cancelarActionPerformed

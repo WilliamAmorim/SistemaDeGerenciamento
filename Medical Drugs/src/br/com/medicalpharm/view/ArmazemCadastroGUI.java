@@ -118,7 +118,7 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         jb_limpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Saída de estoque por armazém");
+        setTitle("Saída de estoque por almoxarifado");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -189,22 +189,22 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         jPanel2.add(jtf_codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 70, -1));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("Estoque");
         jLabel2.setName("jLabel2"); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Código");
         jLabel3.setName("jLabel3"); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel4.setText("Produto / Apresentação");
         jLabel4.setName("jLabel4"); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Quantidade");
         jLabel6.setName("jLabel6"); // NOI18N
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
@@ -236,9 +236,11 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         jTable1.setName("jTable1"); // NOI18N
         jScrollPane2.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(8);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
-        jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(8);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
+        }
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 400, 190));
 
@@ -299,7 +301,7 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addComponent(jrb_consumo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jrb_descarte)
                 .addContainerGap())
         );
@@ -323,12 +325,12 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         getContentPane().add(jftf_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 70, -1));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel1.setText("Código");
         jLabel1.setName("jLabel1"); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 60, -1));
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel14.setText("Data");
         jLabel14.setName("jLabel14"); // NOI18N
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
@@ -369,10 +371,10 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         getContentPane().add(jtf_armazem, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 310, -1));
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 12));
-        jLabel5.setText("Armazém");
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel5.setText("Almoxarifado");
         jLabel5.setName("jLabel5"); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 60, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 90, -1));
 
         jtf_cod_arm.setEditable(false);
         jtf_cod_arm.setName("jtf_cod_arm"); // NOI18N
@@ -406,8 +408,8 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         getContentPane().add(jb_limpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 40));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-511)/2, (screenSize.height-593)/2, 511, 593);
+        setSize(new java.awt.Dimension(511, 593));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salvarActionPerformed

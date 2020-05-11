@@ -174,7 +174,7 @@ public class RelatórioGUI extends javax.swing.JFrame {
         jPanel1.add(jrb_listamCompleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         buttonGroup2.add(jrb_movimento);
-        jrb_movimento.setText("Movimentação por armazém");
+        jrb_movimento.setText("Movimentação por almoxarifado");
         jrb_movimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jrb_movimentoActionPerformed(evt);
@@ -258,7 +258,7 @@ public class RelatórioGUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jrb_ordenarProduto)
                     .addComponent(jrb_ordenarGrupo))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,8 +344,8 @@ public class RelatórioGUI extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 80));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-517)/2, (screenSize.height-506)/2, 517, 506);
+        setSize(new java.awt.Dimension(517, 506));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jrb_itensEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_itensEstoqueActionPerformed

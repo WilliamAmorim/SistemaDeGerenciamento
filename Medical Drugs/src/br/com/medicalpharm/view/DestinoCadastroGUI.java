@@ -63,7 +63,7 @@ public class DestinoCadastroGUI extends javax.swing.JFrame {
         jtf_codigo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Cadastrando Armazém");
+        setTitle("Cadastrando almoxarifado");
         setBackground(new java.awt.Color(255, 102, 102));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
@@ -111,12 +111,12 @@ public class DestinoCadastroGUI extends javax.swing.JFrame {
         });
         getContentPane().add(jtf_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 360, -1));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Descrição");
         jLabel3.setName("jLabel3"); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("Código");
         jLabel2.setName("jLabel2"); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
@@ -125,8 +125,8 @@ public class DestinoCadastroGUI extends javax.swing.JFrame {
         jtf_codigo.setName("jtf_codigo"); // NOI18N
         getContentPane().add(jtf_codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 90, -1));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-421)/2, (screenSize.height-174)/2, 421, 174);
+        setSize(new java.awt.Dimension(421, 174));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salvarActionPerformed

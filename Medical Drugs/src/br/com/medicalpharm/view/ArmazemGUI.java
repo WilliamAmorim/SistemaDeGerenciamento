@@ -73,7 +73,7 @@ public class ArmazemGUI extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Gerenciamento de estoque do armazém");
+        setTitle("Gerenciamento de estoque do almoxarifado");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -90,25 +90,25 @@ public class ArmazemGUI extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(jrb_codigo);
-        jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_codigo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_codigo.setSelected(true);
         jrb_codigo.setText("Código");
         jrb_codigo.setName("jrb_codigo"); // NOI18N
         jPanel1.add(jrb_codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 27, -1, -1));
 
         buttonGroup1.add(jrb_detalhado);
-        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_detalhado.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_detalhado.setText("Específica");
         jrb_detalhado.setName("jrb_detalhado"); // NOI18N
         jPanel1.add(jrb_detalhado, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 27, -1, -1));
 
         buttonGroup1.add(jrb_descricao);
-        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12));
+        jrb_descricao.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jrb_descricao.setText("Descrição");
         jrb_descricao.setName("jrb_descricao"); // NOI18N
         jPanel1.add(jrb_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 27, -1, -1));
 
-        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12));
+        jl_pesquisar_destino.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jl_pesquisar_destino.setText("Parâmetro");
         jl_pesquisar_destino.setName("jl_pesquisar_destino"); // NOI18N
         jPanel1.add(jl_pesquisar_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 62, -1, -1));
@@ -173,14 +173,15 @@ public class ArmazemGUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setCellSelectionEnabled(false);
         jTable1.setName("jTable1"); // NOI18N
         jScrollPane2.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
-        jTable1.getColumnModel().getColumn(1).setResizable(false);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(120);
-        jTable1.getColumnModel().getColumn(2).setPreferredWidth(40);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(120);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(40);
+        }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 466, 100));
 
@@ -220,13 +221,15 @@ public class ArmazemGUI extends javax.swing.JFrame {
                 jTable2.setName("jTable2"); // NOI18N
                 jTable2.getTableHeader().setReorderingAllowed(false);
                 jScrollPane3.setViewportView(jTable2);
-                jTable2.getColumnModel().getColumn(0).setPreferredWidth(250);
-                jTable2.getColumnModel().getColumn(2).setPreferredWidth(50);
+                if (jTable2.getColumnModel().getColumnCount() > 0) {
+                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(250);
+                    jTable2.getColumnModel().getColumn(2).setPreferredWidth(50);
+                }
 
                 getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 466, 128));
 
-                java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-                setBounds((screenSize.width-522)/2, (screenSize.height-472)/2, 522, 472);
+                setSize(new java.awt.Dimension(522, 472));
+                setLocationRelativeTo(null);
             }// </editor-fold>//GEN-END:initComponents
 
     private void jb_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_buscarActionPerformed
