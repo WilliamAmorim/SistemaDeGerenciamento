@@ -193,7 +193,7 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
              Jt_veiculos.removeRow(0);
         }
         
-        veiculos = ve.listarVeiculos(parametro);
+        veiculos = ve.listarVeiculos(parametro,1);
         
         String[] campos = new String[]{null, null};
         for (int i = 0; i < veiculos.size(); i++) {

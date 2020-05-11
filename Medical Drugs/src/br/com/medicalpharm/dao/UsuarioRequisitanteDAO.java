@@ -25,7 +25,7 @@ public class UsuarioRequisitanteDAO {
     
     private String cadastraUsuario = "INSERT INTO `usuario_requisitor`(`nome`, `cpf`) VALUES (?,?)";
     private String alterarUsuario = "UPDATE `usuario_requisitor` SET `nome`= ?,`cpf`= ? WHERE codigo_requisitor = ?";
-    private String buscarNome = "SELECT * FROM `usuario_requisitor` WHERE nome LIKE ?";
+    private String buscarNome = "SELECT * FROM `usuario_requisitor` WHERE ";
     private String buscarCpf = "SELECT * FROM `usuario_requisitor` WHERE cpf LIKE";
     private String buscarRequisitante = "SELECT `nome` FROM `usuario_requisitor` WHERE codigo_requisitor = ?";
 
@@ -66,10 +66,15 @@ public class UsuarioRequisitanteDAO {
     }
     
    
-    public List<UsuarioRequisitanteModel> listarUsuarios(String parametro){
+    public List<UsuarioRequisitanteModel> listarUsuarios(String parametro,int item){
         List<UsuarioRequisitanteModel> usuario = new ArrayList();
         try {
             Conexao conexao = new Conexao();
+            switch(item){
+                case 0:buscarNome += "codigo_requisitor LIKE ?";break;
+                case 1:buscarNome += "nome LIKE ?";break;
+                case 2:buscarNome += "cpf LIKE ?";break;
+            }
             pstm = (PreparedStatement) conexao.conecta().prepareStatement(buscarNome);
             pstm.setString(1, parametro);
             rs = pstm.executeQuery();

@@ -22,6 +22,7 @@ public class RequisitanteCadastroGUI extends javax.swing.JFrame {
     public RequisitanteCadastroGUI() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         
     }
     RequisitanteGerenciarGUI telaPai;
@@ -61,7 +62,7 @@ public class RequisitanteCadastroGUI extends javax.swing.JFrame {
         tf_codigo = new java.awt.TextField();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Novo Usuário");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -240,8 +241,7 @@ public class RequisitanteCadastroGUI extends javax.swing.JFrame {
         UsuarioRequisitanteDAO usuarioControl = new UsuarioRequisitanteDAO();
         if(verificarCampos()){            
             if(verificarCPF(jtf_cpf.getText().replace(".", ""))){
-              
-                usuario.setCodigo_requisitante(Integer.parseInt(tf_codigo.getText()));
+                if(update){ usuario.setCodigo_requisitante(Integer.parseInt(tf_codigo.getText()));  }
                 usuario.setNome_requisitante(jtf_nome.getText());
                 usuario.setCpf(jtf_cpf.getText());
                 if(update){
@@ -252,7 +252,7 @@ public class RequisitanteCadastroGUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
                 if(telaPai != null){
                     telaPai.setEnabled(true);
-                    telaPai.listarUsuarios();
+                    telaPai.listarUsuarios(0);
                     setVisible(false);
                 }else{
                     telaPai2.setEnabled(true);

@@ -21,6 +21,7 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
     public VeiculoCadastrarEditar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         
         
     }
@@ -43,10 +44,9 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
         jtf_codigo = new javax.swing.JTextField();
         jb_cancelar = new javax.swing.JButton();
         jb_salvar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtf_descricao = new javax.swing.JTextArea();
+        jtf_descricao = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jLabel2.setText("Descrição:");
 
@@ -91,26 +91,22 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
             }
         });
 
-        jtf_descricao.setColumns(20);
-        jtf_descricao.setRows(5);
-        jScrollPane1.setViewportView(jtf_descricao);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jb_salvar)
                         .addGap(6, 6, 6)
                         .addComponent(jb_cancelar))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jtf_descricao, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jtf_chassi, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5)
@@ -134,10 +130,10 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtf_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtf_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -224,12 +220,11 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb_cancelar;
     private javax.swing.JButton jb_salvar;
     private javax.swing.JTextField jtf_chassi;
     private javax.swing.JTextField jtf_codigo;
-    private javax.swing.JTextArea jtf_descricao;
+    private javax.swing.JTextField jtf_descricao;
     private javax.swing.JTextField jtf_placa;
     // End of variables declaration//GEN-END:variables
     
@@ -269,7 +264,7 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
                 novoVeiculo.cadastarVeiculo(veiculo,update);
                 
                 if(telaPai != null){
-                    telaPai.listarVeiculos();
+                    telaPai.listarVeiculos(0);
                     telaPai.setEnabled(true);
                 }else{
                     telaPai2.listarVeiculos("");
@@ -283,7 +278,7 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
                 setVisible(false);
             }
         }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro");
+            //JOptionPane.showMessageDialog(null, "Ocorreu um erro");
         }
     }
     

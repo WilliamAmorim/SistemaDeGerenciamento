@@ -24,14 +24,20 @@ public class VeiculoDAO {
     
     private String cadastrarVeiculo = "INSERT INTO `veiculo`(`descricao`, `chassi`, `placa`) VALUES (?,?,?)";
     private String editarVeiculo = "UPDATE `veiculo` SET `descricao`= ?,`chassi`=?,`placa`= ? WHERE codigo = ?";
-    private String listaVeiculos = "SELECT * FROM `veiculo` WHERE chassi LIKE ?";
+    private String listaVeiculos = "SELECT * FROM `veiculo` WHERE ";
     
-    public List<VeiculoModel> listarVeiculos(String chassi){
+    public List<VeiculoModel> listarVeiculos(String nomePesquisa,int parametro){
         List<VeiculoModel> veiculo = new ArrayList();
-        try{
+        
+        try{                       
             Conexao conexao = new Conexao();
+            switch(parametro){
+                case 0:listaVeiculos += "codigo LIKE ?";break;
+                case 1:listaVeiculos += "descricao LIKE ?";break;
+                case 2:listaVeiculos += "chassi LIKE ?";break;                
+            }
             pstm = (PreparedStatement) conexao.conecta().prepareStatement(listaVeiculos);
-            pstm.setString(1,"%"+chassi+"%");
+            pstm.setString(1,"%"+nomePesquisa+"%");
             rs = pstm.executeQuery();
             VeiculoModel vei;
             while(rs.next()){
