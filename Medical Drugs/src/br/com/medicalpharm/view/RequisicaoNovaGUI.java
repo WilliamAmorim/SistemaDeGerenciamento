@@ -453,16 +453,13 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void js_qtdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_js_qtdKeyPressed
-        
-        js_qtd.addKeyListener(new KeyAdapter() {  
-            public void keyReleased(KeyEvent evt) {
-                if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                    if(verificarCampos()){
-                        adicionarLinha();
-                    }
-                }
+                
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if(verificarCampos()){
+                adicionarLinha();   
+                System.out.println("linha adicionada");
             }
-        });
+        }          
     }//GEN-LAST:event_js_qtdKeyPressed
 
     private void jtf_usuarioRequisitanteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_usuarioRequisitanteKeyPressed
