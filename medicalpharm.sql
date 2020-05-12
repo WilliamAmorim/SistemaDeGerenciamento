@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Abr-2020 às 21:42
+-- Generation Time: 12-Maio-2020 às 17:23
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -508,7 +508,7 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `grupo_idgrupo`, `unidadeMedida_idunidadeMedida`, `quantidade`, `concentracao`, `ultimoPreço`, `id_SubGrupo`) VALUES
 (1, 'SORO RINGER LACTATO 500ML', 10, 50, 2, 5, 18, '', 1, 9),
-(2, 'ACIDO ACETILSALICILICO 100MG', 10, 50, 2, 2, 820, 'ACETILDOR', 1, 10),
+(2, 'ACIDO ACETILSALICILICO 100MG', 10, 50, 2, 2, 814, 'ACETILDOR', 1, 10),
 (3, 'AMOXICILINA 500MG', 10, 50, 2, 6, 400, 'AMOXICILINA', 1, 6),
 (4, 'CEFAZOLINA 1G', 10, 50, 2, 5, 58, 'KEFAZOL - CEFAZOLIN', 1, 6),
 (5, 'CEFALOTINA 1G', 10, 50, 2, 5, 20, 'KEFLIN', 1, 6),
@@ -540,10 +540,10 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (31, 'VITELINATO DE PRATA 10% 5ML', 3, 5, 2, 5, 1, 'ARGIROL - CREDE', 1, 10),
 (32, 'BROMIDRATO DE FENOTEROL', 2, 5, 2, 5, 1, 'BEROTEC', 1, 10),
 (33, 'BROMETO DE IPRATROPIO', 3, 5, 2, 5, 8, 'ATROVENT', 1, 10),
-(34, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA GOTAS', 10, 50, 2, 5, 13, 'BUSCOPAN COMPOSTO GOTAS', 1, 10),
+(34, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA GOTAS', 10, 50, 2, 5, 11, 'BUSCOPAN COMPOSTO GOTAS', 1, 10),
 (35, 'DIPIRONA SODICA 500MG/ML (GOTAS)', 10, 50, 2, 5, 9, 'NOVALGINA - MAGNOPYROL', 1, 10),
 (36, 'METILDOPA 250MG', 0, 0, 2, 2, 40, '', 1, 10),
-(37, 'AMIODARONA 200MG', 10, 50, 2, 2, 25, '', 1, 10),
+(37, 'AMIODARONA 200MG', 10, 50, 2, 2, 14, '', 1, 10),
 (38, 'BUTILBROMETO DE ESCOPALAMINA+DIPIRONA SODICA', 10, 50, 2, 2, 70, 'BUSCOPAN COMPOSTO', 1, 10),
 (39, 'DICLOFENACO DE SODIO 50MG', 10, 50, 2, 2, 53, 'VOLTAREN', 1, 10),
 (40, 'NIFEDIPINO 20 MG', 10, 50, 2, 2, 10, 'ADALAT', 1, 10),
@@ -565,9 +565,9 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (56, 'DEXAMETASONA 4MG/ML (AMP 2ML)', 10, 50, 2, 4, 15, '', 1, 10),
 (57, 'FITOMENADIONA 10MG/ML (AMP 1ML)', 10, 50, 2, 4, 135, 'KANAKION - VITAMINA K', 1, 10),
 (58, 'OCITOCINA 5UI/ML (AMP 1ML)', 10, 50, 2, 4, 120, 'SYNTONCINON', 1, 10),
-(59, 'ADRENALINA OU EPINEFRINA 1MG/ML (AMP 1ML)', 2, 3, 2, 4, 58, 'ADRENALINA', 1, 10),
+(59, 'ADRENALINA OU EPINEFRINA 1MG/ML (AMP 1ML)', 2, 3, 2, 4, 52, 'ADRENALINA', 1, 10),
 (60, 'DOPAMINA 5MG/ML (AMP 10ML)', 10, 50, 2, 4, 85, 'REVIVAN', 1, 10),
-(61, 'AMINOFILINA 24MG/ML (AMP 10ML)', 10, 50, 2, 4, 73, '', 1, 10),
+(61, 'AMINOFILINA 24MG/ML (AMP 10ML)', 10, 50, 2, 4, 72, '', 1, 10),
 (62, 'BUTILBROMETO DE ESCOPOLAMINA+DIPIRONA SODICA', 10, 50, 2, 4, 224, 'BUSCOPAN COMPOSTO', 1, 10),
 (63, 'DIPIRONA SODICA 500MG/ML (AMP 2ML)', 10, 50, 2, 4, 36, 'NOVALGINA - MAGNOPYROL', 1, 10),
 (64, 'CAMPO OPERATORIO 45X50CM', 10, 50, 1, 7, 100, 'COMPRESSA CIRURGICA GRANDE 45X50CM', 1, 1),
@@ -576,12 +576,12 @@ INSERT INTO `produto` (`idproduto`, `descProduto`, `estMinimo`, `estIdeal`, `gru
 (67, 'ALGODAO HIDROFILO 500GR', 10, 50, 1, 7, 2, '', 1, 1),
 (68, 'ATADURA DE CREPE 25CM', 10, 50, 1, 7, 96, '', 1, 1),
 (69, 'AGULHA 25X7', 10, 50, 1, 7, 0, '', 1, 1),
-(70, 'AGULHA 13X4,5', 10, 50, 1, 7, 70, '', 1, 1),
-(71, 'AGULHA 40X12', 10, 50, 1, 7, 53, '', 1, 1),
+(70, 'AGULHA 13X4,5', 10, 50, 1, 7, 69, '', 1, 1),
+(71, 'AGULHA 40X12', 10, 50, 1, 7, 45, '', 1, 1),
 (72, 'LAMINA DE BISTURI N° 15', 10, 50, 1, 7, 40, '', 1, 1),
 (73, 'LAMINA DE BISTURI N° 22', 10, 50, 1, 7, 400, '', 1, 1),
 (74, 'AGULHA PARA ANESTESIA ESPINHAL 25GX3,5', 10, 50, 1, 7, 0, '', 1, 1),
-(75, 'AGULHA PARA ANESTESIA ESPINHAL 27GX3,5', 10, 50, 1, 7, 10, '', 1, 1),
+(75, 'AGULHA PARA ANESTESIA ESPINHAL 27GX3,5', 10, 50, 1, 7, 8, '', 1, 1),
 (76, 'AGULHA PARA ANESTESIA ESPINHAL 23GX80', 10, 50, 1, 7, 2, '', 1, 1),
 (77, 'SERINGA 1 ML COM AGULHA', 10, 50, 1, 7, 136, '', 1, 1),
 (78, 'FITA ADESIVA PARA AUTOCLAVE', 10, 50, 1, 7, 5, '', 1, 1),
@@ -754,7 +754,14 @@ CREATE TABLE `requisicao` (
 --
 
 INSERT INTO `requisicao` (`codigo_requisicao`, `veiculo`, `data_emissao`, `usuario_requisitor`, `usuario_estoquista`) VALUES
-(1, '2', '2020-04-22', '1', '3');
+(1, '2', '2020-04-22', '1', '3'),
+(2, '2', '2020-05-12', '1', '3'),
+(3, '2', '2020-05-12', '2', '3'),
+(4, '2', '2020-05-12', '2', '3'),
+(5, '1', '2020-05-12', '2', '3'),
+(6, '2', '2020-05-12', '1', '3'),
+(7, '2', '2020-05-12', '3', '3'),
+(8, '1', '2020-05-12', '3', '3');
 
 -- --------------------------------------------------------
 
@@ -777,7 +784,30 @@ CREATE TABLE `requisicoes` (
 
 INSERT INTO `requisicoes` (`tipo`, `codigo_requisicao`, `id`, `produto`, `qtd`, `data`) VALUES
 ('E', 1, 1, '75', 2, '2020-04-22'),
-('D', 1, 2, '75', 2, '2020-04-22');
+('D', 1, 2, '75', 2, '2020-04-22'),
+('E', 2, 3, '59', 8, '2020-05-12'),
+('D', 2, 4, '59', 2, '2020-05-12'),
+('D', 2, 5, '59', 1, '2020-05-12'),
+('D', 2, 6, '59', 1, '2020-05-12'),
+('D', 2, 7, '59', 1, '2020-05-12'),
+('D', 2, 8, '59', 1, '2020-05-12'),
+('E', 3, 9, '71', 3, '2020-05-12'),
+('D', 3, 10, '71', 1, '2020-05-12'),
+('E', 3, 11, '34', 5, '2020-05-12'),
+('E', 4, 12, '37', 5, '2020-05-12'),
+('E', 5, 13, '37', 6, '2020-05-12'),
+('E', 6, 14, '71', 8, '2020-05-12'),
+('D', 3, 15, '71', 1, '2020-05-12'),
+('D', 3, 16, '34', 3, '2020-05-12'),
+('E', 7, 17, '2', 6, '2020-05-12'),
+('E', 8, 18, '70', 6, '2020-05-12'),
+('E', 8, 19, '61', 6, '2020-05-12'),
+('D', 8, 20, '70', 3, '2020-05-12'),
+('D', 8, 21, '61', 4, '2020-05-12'),
+('D', 8, 22, '70', 2, '2020-05-12'),
+('D', 8, 23, '61', 1, '2020-05-12'),
+('D', 2, 24, '59', 1, '2020-05-12'),
+('D', 3, 25, '71', 1, '2020-05-12');
 
 -- --------------------------------------------------------
 
@@ -788,27 +818,26 @@ INSERT INTO `requisicoes` (`tipo`, `codigo_requisicao`, `id`, `produto`, `qtd`, 
 CREATE TABLE `saida` (
   `idsaida` int(11) NOT NULL,
   `dataRetirada` date DEFAULT NULL,
-  `destino_idDestino` int(11) NOT NULL,
-  `idUsuario_requisitor` int(11) NOT NULL,
-  `codigo_veiculo` int(11) NOT NULL
+  `destino_idDestino` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `saida`
 --
 
-INSERT INTO `saida` (`idsaida`, `dataRetirada`, `destino_idDestino`, `idUsuario_requisitor`, `codigo_veiculo`) VALUES
-(1, '2011-12-06', 1, 1, 1),
-(2, '2011-12-07', 1, 1, 1),
-(3, '2011-12-07', 3, 1, 1),
-(4, '2011-12-07', 1, 1, 1),
-(5, '2011-12-08', 3, 1, 1),
-(6, '2011-12-09', 2, 1, 1),
-(7, '2011-12-08', 4, 1, 1),
-(8, '2011-12-10', 3, 1, 1),
-(9, '2020-04-08', 4, 1, 1),
-(10, '2012-05-01', 2, 1, 1),
-(11, '2001-02-12', 5, 1, 2);
+INSERT INTO `saida` (`idsaida`, `dataRetirada`, `destino_idDestino`) VALUES
+(1, '2011-12-06', 1),
+(2, '2011-12-07', 1),
+(3, '2011-12-07', 3),
+(4, '2011-12-07', 1),
+(5, '2011-12-08', 3),
+(6, '2011-12-09', 2),
+(7, '2011-12-08', 4),
+(8, '2011-12-10', 3),
+(9, '2020-04-08', 4),
+(10, '2012-05-01', 2),
+(11, '2001-02-12', 5),
+(12, '2020-05-12', 3);
 
 -- --------------------------------------------------------
 
@@ -820,15 +849,18 @@ CREATE TABLE `saidadestino` (
   `codMovimento` int(11) NOT NULL,
   `dataMovimento` date DEFAULT NULL,
   `motivoMovimento` varchar(12) DEFAULT NULL,
-  `destino_idDestino` int(11) DEFAULT NULL
+  `destino_idDestino` int(11) DEFAULT NULL,
+  `idUsuario_requisitor` int(11) NOT NULL,
+  `codigo_veiculo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `saidadestino`
 --
 
-INSERT INTO `saidadestino` (`codMovimento`, `dataMovimento`, `motivoMovimento`, `destino_idDestino`) VALUES
-(1, '2011-09-09', 'consumo', 1);
+INSERT INTO `saidadestino` (`codMovimento`, `dataMovimento`, `motivoMovimento`, `destino_idDestino`, `idUsuario_requisitor`, `codigo_veiculo`) VALUES
+(1, '2011-09-09', 'consumo', 1, 0, 0),
+(2, '2020-05-02', 'consumo', 4, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -848,7 +880,8 @@ CREATE TABLE `saidadestinoitem` (
 --
 
 INSERT INTO `saidadestinoitem` (`codProduto`, `quantidade`, `saida_saidadestino`, `cod_saidaarmazem`) VALUES
-(157, 1, 1, 1);
+(157, 1, 1, 1),
+(74, 12, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -994,7 +1027,8 @@ INSERT INTO `saidaitem` (`quantidade`, `produto_idproduto`, `saida_idsaida`, `id
 (24, 120, 8, 124),
 (20, 74, 9, 125),
 (1, 75, 10, 126),
-(2, 80, 11, 127);
+(2, 80, 11, 127),
+(2, 75, 12, 128);
 
 -- --------------------------------------------------------
 
@@ -1172,10 +1206,11 @@ INSERT INTO `tbarmazem` (`codDestino`, `codProduto`, `quantidade`, `idarmazem`, 
 (3, 54, 12, 124, '2013-06-01'),
 (3, 81, 100, 125, '2013-12-01'),
 (3, 120, 24, 126, '2013-08-01'),
-(4, 74, 17, 127, '2014-01-01'),
+(4, 74, 5, 127, '2014-01-01'),
 (4, 74, 3, 128, '2014-02-01'),
 (2, 75, 1, 129, '2013-10-01'),
-(5, 80, 2, 130, '2014-06-01');
+(5, 80, 2, 130, '2014-06-01'),
+(3, 75, 2, 131, '2013-10-01');
 
 -- --------------------------------------------------------
 
@@ -1279,7 +1314,7 @@ INSERT INTO `tbvencimento` (`codProduto`, `data`, `lote`, `quantidade`, `idVenci
 (72, '2016-03-01', 'CS11C02', 40, 85),
 (73, '2015-03-01', 'CS10C02', 400, 86),
 (74, '2014-02-01', '990211', 0, 87),
-(75, '2013-10-01', '880942', 12, 88),
+(75, '2013-10-01', '880942', 10, 88),
 (76, '2012-12-01', '09A002', 2, 89),
 (74, '2014-01-01', 'WF2011032', 0, 90),
 (77, '2015-09-01', '201034', 136, 91),
@@ -1551,7 +1586,9 @@ CREATE TABLE `usuario_requisitor` (
 --
 
 INSERT INTO `usuario_requisitor` (`codigo_requisitor`, `nome`, `cpf`) VALUES
-(1, 'Ricardo', '708.852.431.70');
+(1, 'Ricardo', '708.852.431.70'),
+(2, 'Tulio', '708.852.431.70'),
+(3, 'andre', '708.852.431.70');
 
 -- --------------------------------------------------------
 
@@ -1572,8 +1609,7 @@ CREATE TABLE `veiculo` (
 
 INSERT INTO `veiculo` (`codigo`, `descricao`, `chassi`, `placa`) VALUES
 (1, 'Buggy 1.6/ TST/ RS 1.6 4-Lug.', '54824067494', 'MOJ-7137'),
-(2, 'Corona Mec.', '25293690605', 'HWC-2477'),
-(3, 'veiculo', '12', '65');
+(2, 'Corona Mec.', '25293690605', 'HWC-2477');
 
 -- --------------------------------------------------------
 
@@ -1847,37 +1883,37 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT for table `requisicao`
 --
 ALTER TABLE `requisicao`
-  MODIFY `codigo_requisicao` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codigo_requisicao` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `requisicoes`
 --
 ALTER TABLE `requisicoes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `saida`
 --
 ALTER TABLE `saida`
-  MODIFY `idsaida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idsaida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `saidadestino`
 --
 ALTER TABLE `saidadestino`
-  MODIFY `codMovimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codMovimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `saidadestinoitem`
 --
 ALTER TABLE `saidadestinoitem`
-  MODIFY `cod_saidaarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_saidaarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `saidaitem`
 --
 ALTER TABLE `saidaitem`
-  MODIFY `idsaidaItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `idsaidaItem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT for table `subgrupo`
@@ -1889,7 +1925,7 @@ ALTER TABLE `subgrupo`
 -- AUTO_INCREMENT for table `tbarmazem`
 --
 ALTER TABLE `tbarmazem`
-  MODIFY `idarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `idarmazem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT for table `tbvencimento`
@@ -1913,13 +1949,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `usuario_requisitor`
 --
 ALTER TABLE `usuario_requisitor`
-  MODIFY `codigo_requisitor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codigo_requisitor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `veiculo`
 --
 ALTER TABLE `veiculo`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

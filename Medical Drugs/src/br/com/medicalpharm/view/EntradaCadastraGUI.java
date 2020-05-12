@@ -97,7 +97,6 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel2 = new javax.swing.JPanel();
-        jtf_lote = new javax.swing.JTextField(new LimitadorTexto(20), "",10);
         /*try  {          
             Locale BRAZIL = new Locale("pt","BR");  
             DecimalFormatSymbols REAL = new DecimalFormatSymbols(BRAZIL);
@@ -109,21 +108,11 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         */
         jtf_preco = new javax.swing.JTextField();
         jtf_quantidade = new javax.swing.JTextField(new LimitadorTexto(11), "",10);
-        try  {      
-            formatoData = new MaskFormatter("##/##/####");  
-        } 
-        catch (Exception erro)  
-        {    
-            JOptionPane.showMessageDialog(null,"Não foi possivel setar");  
-        }
-        jftf_vencimento = new JFormattedTextField(formatoData);
         jb_adicionar = new javax.swing.JButton();
         jb_eliminar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jtf_produto = new javax.swing.JTextField();
@@ -181,14 +170,6 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         jPanel2.setName("jPanel2"); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jtf_lote.setName("jtf_lote"); // NOI18N
-        jtf_lote.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jtf_loteFocusGained(evt);
-            }
-        });
-        jPanel2.add(jtf_lote, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, -1));
-
         jtf_preco.setText("R$");
         jtf_preco.setName("jtf_preco"); // NOI18N
         jtf_preco.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -199,7 +180,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
                 jtf_precoFocusLost(evt);
             }
         });
-        jPanel2.add(jtf_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 80, -1));
+        jPanel2.add(jtf_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 80, -1));
 
         jtf_quantidade.addKeyListener(new java.awt.event.KeyAdapter() {     // cria um listener ouvinte de digitação do fieldNumero
 
@@ -220,20 +201,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
                 jtf_quantidadeKeyPressed(evt);
             }
         });
-        jPanel2.add(jtf_quantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 70, -1));
-
-        jftf_vencimento.setName("jftf_vencimento"); // NOI18N
-        jftf_vencimento.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jftf_vencimentoFocusGained(evt);
-            }
-        });
-        jftf_vencimento.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jftf_vencimentoKeyPressed(evt);
-            }
-        });
-        jPanel2.add(jftf_vencimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 70, -1));
+        jPanel2.add(jtf_quantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 70, -1));
 
         jb_adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/edit_add.png"))); // NOI18N
         jb_adicionar.setToolTipText("Incluir");
@@ -255,30 +223,20 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         });
         jPanel2.add(jb_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 30, 30));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Produto");
         jLabel3.setName("jLabel3"); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 300, -1));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12));
-        jLabel4.setText("Lote");
-        jLabel4.setName("jLabel4"); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel5.setText("Preço unitário");
         jLabel5.setName("jLabel5"); // NOI18N
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Quantidade");
         jLabel6.setName("jLabel6"); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 12));
-        jLabel13.setText("Vencimento");
-        jLabel13.setName("jLabel13"); // NOI18N
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 
         jScrollPane2.setName("jScrollPane2"); // NOI18N
 
@@ -307,12 +265,14 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         });
         jTable1.setName("jTable1"); // NOI18N
         jScrollPane2.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
-        jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(4).setPreferredWidth(30);
-        jTable1.getColumnModel().getColumn(5).setPreferredWidth(50);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(5).setPreferredWidth(50);
+        }
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 550, 200));
 
@@ -329,7 +289,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         });
         jPanel2.add(jtf_produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 410, -1));
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel14.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel14.setText("Código");
         jLabel14.setName("jLabel14"); // NOI18N
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
@@ -359,7 +319,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jb_salvar);
-        jb_salvar.setBounds(410, 20, 91, 35);
+        jb_salvar.setBounds(410, 20, 94, 35);
 
         jb_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/exit.png"))); // NOI18N
         jb_cancelar.setText("Cancelar");
@@ -370,9 +330,9 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jb_cancelar);
-        jb_cancelar.setBounds(510, 20, 101, 35);
+        jb_cancelar.setBounds(510, 20, 107, 35);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel1.setText("Código");
         jLabel1.setName("jLabel1"); // NOI18N
         getContentPane().add(jLabel1);
@@ -381,7 +341,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         jtf_codigo_forn.setEditable(false);
         jtf_codigo_forn.setName("jtf_codigo_forn"); // NOI18N
         getContentPane().add(jtf_codigo_forn);
-        jtf_codigo_forn.setBounds(30, 150, 88, 20);
+        jtf_codigo_forn.setBounds(30, 150, 88, 24);
 
         jftf_lancamento.setEditable(false);
         jftf_lancamento.setName("jftf_lancamento"); // NOI18N
@@ -395,7 +355,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jtf_NotaFiscal);
-        jtf_NotaFiscal.setBounds(120, 100, 100, 20);
+        jtf_NotaFiscal.setBounds(120, 100, 100, 24);
 
         jtf_serie.setName("jtf_serie"); // NOI18N
         jtf_serie.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -404,7 +364,7 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jtf_serie);
-        jtf_serie.setBounds(240, 100, 90, 20);
+        jtf_serie.setBounds(240, 100, 90, 24);
 
         jftf_emissao.setName("jftf_emissao"); // NOI18N
         jftf_emissao.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -435,33 +395,33 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jtf_fornecedor);
-        jtf_fornecedor.setBounds(140, 150, 410, 20);
+        jtf_fornecedor.setBounds(140, 150, 410, 24);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("N° Série");
         jLabel2.setName("jLabel2"); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(240, 80, 50, 16);
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel9.setText("Data");
         jLabel9.setName("jLabel9"); // NOI18N
         getContentPane().add(jLabel9);
         jLabel9.setBounds(30, 80, 26, 16);
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel11.setText("Nota Fiscal");
         jLabel11.setName("jLabel11"); // NOI18N
         getContentPane().add(jLabel11);
         jLabel11.setBounds(120, 80, 62, 16);
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel12.setText("Emissão");
         jLabel12.setName("jLabel12"); // NOI18N
         getContentPane().add(jLabel12);
         jLabel12.setBounds(350, 80, 50, 16);
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 12));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel10.setText("Fornecedor");
         jLabel10.setName("jLabel10"); // NOI18N
         getContentPane().add(jLabel10);
@@ -475,15 +435,15 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             }
         });
         getContentPane().add(jb_fornecedor);
-        jb_fornecedor.setBounds(560, 150, 30, 23);
+        jb_fornecedor.setBounds(560, 150, 30, 32);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/shoppingcart_full.png"))); // NOI18N
         jLabel7.setName("jLabel7"); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(30, 20, 70, 50);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-656)/2, (screenSize.height-599)/2, 656, 599);
+        setSize(new java.awt.Dimension(656, 599));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -528,15 +488,6 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
     }//GEN-LAST:event_formKeyReleased
-
-    private void jftf_vencimentoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jftf_vencimentoKeyPressed
-//        try{
-//        alimentarItens();
-//        }catch (ParseException ex) {
-//            Logger.getLogger(EntradaCadastraGUI.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jftf_vencimentoKeyPressed
     ProdutoModel produtoCombo;
     FornecedorModel fornecedorCombo;
     private void jtf_NotaFiscalFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtf_NotaFiscalFocusGained
@@ -602,23 +553,6 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
         // TODO add your handling code here:
     }//GEN-LAST:event_jftf_emissaoFocusGained
 
-    private void jtf_loteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtf_loteFocusGained
-        jtf_lote.setInputVerifier(new InputVerifier() {
-
-            public boolean verify(JComponent input) {
-                if (jtf_lote.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Informe o lote");
-                    jtf_lote.requestFocus();
-                    return false;
-                } else {
-                    jtf_preco.requestFocus();
-                    return true;
-                }
-            }
-        });
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtf_loteFocusGained
-
     private void jtf_precoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtf_precoFocusGained
         jtf_preco.setInputVerifier(new InputVerifier() {
 
@@ -645,41 +579,12 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
                     jtf_quantidade.requestFocus();
                     return false;
                 } else {
-                    jftf_vencimento.requestFocus();
                     return true;
                 }
             }
         });
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_quantidadeFocusGained
-
-    private void jftf_vencimentoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jftf_vencimentoFocusGained
-        jftf_vencimento.setInputVerifier(new InputVerifier() {
-
-            public boolean verify(JComponent input) {
-                if (jftf_vencimento.getText().trim().length() < 10) {
-                    JOptionPane.showMessageDialog(null, "Data de emissão inválida");
-                    return false;
-                } else if (jftf_vencimento.getText().equals("  /  /    ")) {
-                    JOptionPane.showMessageDialog(null, "Informe a data de vencimento");
-                    return false;
-                } else {
-                    try {
-                        if (!validaDataVencimento(jftf_vencimento.getText())) {
-                            JOptionPane.showMessageDialog(null, "Data de vencimento inválida");
-                            return false;
-                        } else {
-                            return true;
-                        }
-                    } catch (ParseException ex) {
-                        Logger.getLogger(AjusteEstoqueGUI.class.getName()).log(Level.SEVERE, null, ex);
-                        return false;
-                    }
-                }
-            }
-        });
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jftf_vencimentoFocusGained
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         ((DefaultTableModel) jTable1.getModel()).setRowCount(0);
@@ -886,11 +791,9 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -905,12 +808,10 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     private javax.swing.JButton jb_salvar;
     private javax.swing.JFormattedTextField jftf_emissao;
     private javax.swing.JFormattedTextField jftf_lancamento;
-    private javax.swing.JFormattedTextField jftf_vencimento;
     private javax.swing.JTextField jtf_NotaFiscal;
     private javax.swing.JTextField jtf_codigo;
     private javax.swing.JTextField jtf_codigo_forn;
     private javax.swing.JTextField jtf_fornecedor;
-    private javax.swing.JTextField jtf_lote;
     private javax.swing.JTextField jtf_preco;
     private javax.swing.JTextField jtf_produto;
     private javax.swing.JTextField jtf_quantidade;
@@ -927,7 +828,7 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
                 entrItem.setProduto(new ProdutoModel((Integer) jTable1.getValueAt(i, 0)));
                 entrItem.setLote((String) jTable1.getValueAt(i, 2));
                 entrItem.setPreco(getPrecoFormato((String) jTable1.getValueAt(i, 3)));
-                entrItem.setQnt(Integer.parseInt((String) jTable1.getValueAt(i, 4)));
+                entrItem.setQnt(Integer.parseInt((String) jTable1   8.getValueAt(i, 4)));
                 try {
                     entrItem.setVencimento(new SimpleDateFormat("dd/MM/yyyy").parse((String) jTable1.getValueAt(i, 5)));
                     //                ItemDbGrid hashDbGrid1 = (ItemDbGrid) jTable1.getValueAt(i, 0);
@@ -994,10 +895,10 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
 
     public void limparCampos() {
 
-        jtf_lote.setText("");
+
         jtf_preco.setText("");
         jtf_quantidade.setText("");
-        jftf_vencimento.setText("");
+        
 //        jcb_produto.requestFocus();
     }
 
@@ -1147,22 +1048,17 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
         if (jtf_codigo.getText().equals("")) {
             msgERRO = msgERRO + " *Produto\n";
         }
-        if (jtf_lote.getText().equals("")) {
-            msgERRO = msgERRO + " *Lote\n";
-        }
+       
         if (jtf_preco.getText().equals("R$")) {
             msgERRO = msgERRO + " *Preço\n";
         }
         if (jtf_quantidade.getText().equals("")) {
             msgERRO = msgERRO + " *Quantidade\n";
         }
-        if (jftf_vencimento.getText().equals("  /  /    ")) {
-            msgERRO = msgERRO + " *Vencimento\n";
-        }
+       
 
         if (!msgERRO.equals("Preencha os campos obrigatórios:\n")) {
-            JOptionPane.showMessageDialog(this, msgERRO);
-            jtf_lote.requestFocus();
+            JOptionPane.showMessageDialog(this, msgERRO);           
             return false;
         } else {
             return true;
@@ -1172,19 +1068,18 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     public void alimentarItens() throws ParseException {
         if (verificarItem() && (verificaTabela() == true)) {
             entradaItemModel.setEntradaModel(entradaModel);
-            entradaItemModel.setLote((jtf_lote.getText()));
+            entradaItemModel.setLote((""));
 
 
             entradaItemModel.setProduto(produto);
             entradaItemModel.setQnt(new Integer(jtf_quantidade.getText()));
-            entradaItemModel.setPreco(getPrecoFormato(jtf_preco.getText()));
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            entradaItemModel.setPreco(getPrecoFormato(jtf_preco.getText()));            
 
-            entradaItemModel.setVencimento(dateFormat.parse(jftf_vencimento.getText()));
+            entradaItemModel.setVencimento(null);
 
             DefaultTableModel row = (DefaultTableModel) jTable1.getModel();
             ItemDbGrid hashDbGrid = new ItemDbGrid(entradaItemModel, entradaItemModel.getProduto().getNome_produto());
-            row.addRow(new Object[]{produto.getCod_produto(), hashDbGrid, jtf_lote.getText(), jtf_preco.getText(), jtf_quantidade.getText(), jftf_vencimento.getText()});
+            row.addRow(new Object[]{produto.getCod_produto(), hashDbGrid,jtf_preco.getText(), jtf_quantidade.getText()});
             limparItem();
             jtf_produto.requestFocus();
         } else {
@@ -1208,7 +1103,7 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
                 ent.setProduto(new ProdutoModel((Integer) jTable1.getValueAt(i, 0)));
                
                 String lote = null;
-                lote = jtf_lote.getText();
+                
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
               
@@ -1222,7 +1117,7 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
                 }
                 data = null;
                 try {
-                    data = (dateFormat.parse(jftf_vencimento.getText()));
+                    data = (dateFormat.parse(""));
                 } catch (ParseException ex) {
                     Logger.getLogger(EntradaCadastraGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -1282,10 +1177,10 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
 
     public void limparItem() {
 
-        jtf_lote.setText("");
+       
         jtf_preco.setText("R$");
         jtf_quantidade.setText("");
-        jftf_vencimento.setText("");
+       
         jtf_codigo.setText("");
         jtf_produto.setText("");
 //        jtf_concentracao.setText("");
@@ -1308,8 +1203,7 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     public void carregaProduto(ProdutoModel produto) {
         this.produto = produto;
         jtf_produto.setText(produto.getNome_produto());
-        jtf_codigo.setText(String.valueOf(produto.getCod_produto()));
-        jtf_lote.requestFocus();
+        jtf_codigo.setText(String.valueOf(produto.getCod_produto()));       
     }
 
     public void setStatusTela(boolean status) {
