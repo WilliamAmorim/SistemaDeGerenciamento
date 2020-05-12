@@ -19,6 +19,8 @@ import br.com.medicalpharm.model.ArmazemModel;
 import br.com.medicalpharm.model.ProdutoModel;
 import br.com.medicalpharm.model.SaidaItemModel;
 import br.com.medicalpharm.model.SaidaModel;
+import br.com.medicalpharm.model.UsuarioRequisitanteModel;
+import br.com.medicalpharm.model.VeiculoModel;
 import br.com.medicalpharm.util.ItemDbGrid;
 import br.com.medicalpharm.util.LimitadorTexto;
 import java.awt.event.KeyEvent;
@@ -116,6 +118,16 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         jb_armazem = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jb_limpar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jtf_codigoUsuarioRequisitante = new javax.swing.JTextField();
+        jtf_usuarioRequisitante = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jtf_veiculo = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jtf_codigoVeiculo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Saída de estoque por almoxarifado");
@@ -271,7 +283,7 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 30, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 450, 340));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 450, 340));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Motivo"));
         jPanel3.setName("jPanel3"); // NOI18N
@@ -374,7 +386,7 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel5.setText("Almoxarifado");
         jLabel5.setName("jLabel5"); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 90, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 90, -1));
 
         jtf_cod_arm.setEditable(false);
         jtf_cod_arm.setName("jtf_cod_arm"); // NOI18N
@@ -408,7 +420,57 @@ public class ArmazemCadastroGUI extends javax.swing.JFrame implements ArmazemCad
         });
         getContentPane().add(jb_limpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, 40));
 
-        setSize(new java.awt.Dimension(511, 593));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel8.setText("Código");
+        jLabel8.setName("jLabel8"); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 60, -1));
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel9.setText("Usuario Requisitante:");
+        jLabel9.setName("jLabel9"); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
+
+        jtf_codigoUsuarioRequisitante.setEnabled(false);
+        jtf_codigoUsuarioRequisitante.setName("jtf_codigoUsuarioRequisitante"); // NOI18N
+        getContentPane().add(jtf_codigoUsuarioRequisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 80, -1));
+
+        jtf_usuarioRequisitante.setName("jtf_usuarioRequisitante"); // NOI18N
+        getContentPane().add(jtf_usuarioRequisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 310, -1));
+
+        jButton2.setText("...");
+        jButton2.setName("jButton2"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 30, -1));
+
+        jButton3.setText("...");
+        jButton3.setName("jButton3"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 30, -1));
+
+        jtf_veiculo.setName("jtf_veiculo"); // NOI18N
+        getContentPane().add(jtf_veiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 310, -1));
+
+        jLabel11.setText("Veiculo:");
+        jLabel11.setName("jLabel11"); // NOI18N
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
+
+        jLabel10.setText("Código");
+        jLabel10.setName("jLabel10"); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+
+        jtf_codigoVeiculo.setEnabled(false);
+        jtf_codigoVeiculo.setName("jtf_codigoVeiculo"); // NOI18N
+        getContentPane().add(jtf_codigoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 80, -1));
+
+        setSize(new java.awt.Dimension(511, 725));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -706,6 +768,22 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     // TODO add your handling code here:
 }//GEN-LAST:event_jtf_quantidadeFocusLost
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RequisitanteConsultarGUI requi = new RequisitanteConsultarGUI();
+        requi.listarUsuarios(jtf_usuarioRequisitante.getText());
+        requi.setSaidaEstoque(this);
+        requi.saidaEstoque = this;
+        requi.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        VeiculoConsultar2GUI mostrar = new VeiculoConsultar2GUI();
+        mostrar.listarVeiculos(jtf_veiculo.getText());
+        mostrar.setSaidaEstoque(this);
+        mostrar.saidaEstoque = this;
+        mostrar.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -720,7 +798,11 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -728,6 +810,8 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
@@ -744,9 +828,13 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
     private javax.swing.JTextField jtf_armazem;
     private javax.swing.JTextField jtf_cod_arm;
     private javax.swing.JTextField jtf_codigo;
+    private javax.swing.JTextField jtf_codigoUsuarioRequisitante;
+    private javax.swing.JTextField jtf_codigoVeiculo;
     private javax.swing.JTextField jtf_estoque;
     private javax.swing.JTextField jtf_produto;
     private javax.swing.JTextField jtf_quantidade;
+    private javax.swing.JTextField jtf_usuarioRequisitante;
+    private javax.swing.JTextField jtf_veiculo;
     // End of variables declaration//GEN-END:variables
 
     public void statusTela(boolean status) {
@@ -799,6 +887,8 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
 
                 armazemSaida.setDestino(armazem);
                 armazemSaida.setDataMovimento(new SimpleDateFormat("dd/MM/yyyy").parse(jftf_data.getText()));
+                armazemSaida.setCodigoVeiculo(Integer.parseInt(jtf_codigoVeiculo.getText()));
+                armazemSaida.setIdrequisitante(Integer.parseInt(jtf_codigoUsuarioRequisitante.getText()));                
                 if (jrb_consumo.isSelected()) {
                     armazemSaida.setMotivo("consumo");
                 } else {
@@ -839,6 +929,13 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
         if (jTable1.getRowCount() == 0) {
             msgERRO = msgERRO + " *Adicione pelo menos 1 Produto\n";
         }
+        if(jtf_codigoUsuarioRequisitante.getText().equals("")){
+            msgERRO = msgERRO + " *Usuario Requisitante\n";
+        }
+        if(jtf_codigoVeiculo.getText().equals("")){
+            msgERRO = msgERRO + " *Codigo Veiculo\n";
+        }
+        
         if (!msgERRO.equals("Preencha os campos obrigatórios:\n")) {
             JOptionPane.showMessageDialog(this, msgERRO);
             jftf_data.requestFocus();
@@ -1062,5 +1159,16 @@ private void jtf_quantidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
         jtf_cod_arm.setText(String.valueOf(armazem.getCod_destino()));
         jtf_armazem.setText(armazem.getDesc_destino());
         jtf_produto.requestFocus();
+    }
+    
+     public void carregarVeiculo(VeiculoModel veiculo){
+        jtf_codigoVeiculo.setText(veiculo.getCodigo()+"");
+        jtf_veiculo.setText(veiculo.getDescricao()+"");
+    }
+     
+    public void carregarUsuarioRequisitante(UsuarioRequisitanteModel requisitante){//UsuarioRequisitanteModel requisitante
+        //UsuarioRequisitanteDAO usu = requisitante;
+        jtf_usuarioRequisitante.setText(requisitante.getNome_requisitante());
+        jtf_codigoUsuarioRequisitante.setText(requisitante.getCodigo_requisitante()+"");      
     }
 }

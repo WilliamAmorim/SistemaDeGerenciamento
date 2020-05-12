@@ -77,7 +77,7 @@ public class RequisicaoQtdDevolvidaGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    RequisicaoDevolver_Interface d;
+    RequisicaoDevolverGUI_Interface d;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         carregarDevolucao();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -99,7 +99,7 @@ public class RequisicaoQtdDevolvidaGUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
-    public void setDevolver(RequisicaoDevolver_Interface d){
+    public void setDevolver(RequisicaoDevolverGUI_Interface d){
         this.d = d;
     }
     /**

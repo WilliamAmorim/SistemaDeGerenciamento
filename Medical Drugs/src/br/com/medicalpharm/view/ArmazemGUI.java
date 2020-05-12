@@ -200,14 +200,14 @@ public class ArmazemGUI extends javax.swing.JFrame {
 
                     },
                     new String [] {
-                        "Destino", "Motivo", "Data"
+                        "Destino", "Requisitante", "Veiculo", "Motivo", "Data"
                     }
                 ) {
                     Class[] types = new Class [] {
-                        java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                        java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
                     };
                     boolean[] canEdit = new boolean [] {
-                        false, false, false
+                        false, false, false, false, false
                     };
 
                     public Class getColumnClass(int columnIndex) {
@@ -222,8 +222,8 @@ public class ArmazemGUI extends javax.swing.JFrame {
                 jTable2.getTableHeader().setReorderingAllowed(false);
                 jScrollPane3.setViewportView(jTable2);
                 if (jTable2.getColumnModel().getColumnCount() > 0) {
-                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(250);
-                    jTable2.getColumnModel().getColumn(2).setPreferredWidth(50);
+                    jTable2.getColumnModel().getColumn(0).setPreferredWidth(150);
+                    jTable2.getColumnModel().getColumn(4).setPreferredWidth(50);
                 }
 
                 getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 466, 128));
@@ -342,6 +342,8 @@ public class ArmazemGUI extends javax.swing.JFrame {
                     armazem.setIdArmazem(armazens.get(i).getIdArmazem());
                     armazem.setDestino(armazens.get(i).getDestino());
                     armazem.setMotivo(armazens.get(i).getMotivo());
+                    armazem.setDescricaoVeiculo(armazens.get(i).getDescricaoVeiculo());
+                    armazem.setNomeRequisitante(armazens.get(i).getNomeRequisitante());
                     armazem.setDataMovimento(armazens.get(i).getDataMovimento());
         
                     SimpleDateFormat in = new SimpleDateFormat("yyyy-MM-dd");
@@ -352,7 +354,7 @@ public class ArmazemGUI extends javax.swing.JFrame {
         
                     DefaultTableModel row = (DefaultTableModel) jTable2.getModel();
                     ItemDbGrid hashDbGrid = new ItemDbGrid(armazem, armazem.getDestino().getDesc_destino());
-                    row.addRow(new Object[]{hashDbGrid, armazem.getMotivo(), lancamento});
+                    row.addRow(new Object[]{hashDbGrid,armazem.getNomeRequisitante(),armazem.getDescricaoVeiculo(), armazem.getMotivo(), lancamento});
                 } catch (ParseException ex) {
                     Logger.getLogger(ArmazemGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -44,12 +44,44 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
         jb_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Consultar Requisitante");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jLabel2.setText("Usuarios Encontrados");
+        jLabel2.setText("Requisitantes Encontrados");
 
-        jTable1.setModel(Jt_requisicoes);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nome"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);
+        }
 
         jb_novo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/novo_registro.gif"))); // NOI18N
         jb_novo1.setText("Novo");
@@ -103,7 +135,7 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_novo1)
+                    .addComponent(jb_novo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -140,6 +172,12 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
 //        }
 // pegarUsuario();
     }//GEN-LAST:event_jb_cancelarActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+       if (evt.getClickCount() == 2 && evt.getButton() == evt.BUTTON1){
+             pegarUsuario();
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,38 +230,32 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
         mostraRequisicoes(usuarios);
         
     }
-    DefaultTableModel Jt_requisicoes = new DefaultTableModel(null, new String[]{"Código", "Nome"});
+   // DefaultTableModel Jt_requisicoes = new DefaultTableModel(null, new String[]{"Código", "Nome"});
     public void mostraRequisicoes(List<UsuarioRequisitanteModel> requi){
         RequisicoesProdutoDAO d = new RequisicoesProdutoDAO();
-        while (Jt_requisicoes.getRowCount() > 0) {
-             Jt_requisicoes.removeRow(0);
-        }
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setNumRows(0);
          if (requi.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Nenhum usuário encontrado");
+            JOptionPane.showMessageDialog(this, "Nenhum Requisitante encontrado");
 
         } else {
 
-
-            String[] campos = new String[]{null, null};
-            for (int i = 0; i < requi.size(); i++) {
-
-                Jt_requisicoes.addRow(campos);
-
-                Jt_requisicoes.setValueAt(requi.get(i).getCodigo_requisitante(), i, 0);
-                Jt_requisicoes.setValueAt(requi.get(i).getNome_requisitante(), i, 1);
-
+            DefaultTableModel row = (DefaultTableModel) jTable1.getModel();
+           
+            for (int i = 0; i < requi.size(); i++) {              
+                row.addRow(new Object[]{requi.get(i).getCodigo_requisitante(),requi.get(i).getNome_requisitante()});
             }
         }
     }
     public UsuarioRequisitanteModel requisitante = new UsuarioRequisitanteModel();
     public RequisicaoNovaGUI requiNova = null;   
-    public SaidaEstoqueGUI saidaEstoque = null;
+    public ArmazemCadastroGUI saidaEstoque = null;
     RequisicaoNovaGUI_Interface reInterface;
-    SaidaEstoqueGUI_interface saidaEstoqueInterface;
+    ArmazemCadastroGUI_Interface saidaEstoqueInterface;
     public void pegarUsuario(){
         //requi = new  UsuarioRequisitanteModel();
-        requisitante.setNome_requisitante(Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 1).toString().trim());//Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 1).toString().trim()+
-        requisitante.setCodigo_requisitante(Integer.parseInt(Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 0).toString().trim()));//Integer.parseInt(Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 0).toString().trim()+        
+        requisitante.setNome_requisitante(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString().trim());//Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 1).toString().trim()+
+        requisitante.setCodigo_requisitante(Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().trim()));//Integer.parseInt(Jt_requisicoes.getValueAt(jTable1.getSelectedRow(), 0).toString().trim()+        
         
         if(requiNova != null){
             reInterface.carregarUsuario(requisitante);                   
@@ -238,7 +270,7 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
         reInterface = re;
     }
     
-    public void setSaidaEstoque(SaidaEstoqueGUI_interface in){
+    public void setSaidaEstoque(ArmazemCadastroGUI_Interface in){
         saidaEstoqueInterface = in;
     }
 

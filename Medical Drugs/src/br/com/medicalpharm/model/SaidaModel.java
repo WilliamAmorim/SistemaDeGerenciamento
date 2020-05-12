@@ -23,44 +23,8 @@ public class SaidaModel {
     private Integer idsaida;
     private ArmazemModel destino;
     private Date dataSaida;
-    private List<SaidaItemModel> itensSaida;
-    private Integer idrequisitante;
-    private String NomeRequisitante;
-    private Integer codigoVeiculo;
-    private String descricaoVeiculo;
-
-    public String getDescricaoVeiculo() {
-        return descricaoVeiculo;
-    }
-
-    public void setDescricaoVeiculo(String descricaoVeiculo) {
-        this.descricaoVeiculo = descricaoVeiculo;
-    }
-
-    public Integer getCodigoVeiculo() {
-        return codigoVeiculo;
-    }
-
-    public void setCodigoVeiculo(Integer codigoVeiculo) {
-        this.codigoVeiculo = codigoVeiculo;
-    }
-
-    public String getNomeRequisitante() {
-        return NomeRequisitante;
-    }
-
-    public void setNomeRequisitante(String NomeRequisitante) {
-        this.NomeRequisitante = NomeRequisitante;
-    }
-
-    public Integer getIdrequisitante() {
-        return idrequisitante;
-    }
-
-    public void setIdrequisitante(Integer idrequisitante) {
-        this.idrequisitante = idrequisitante;
-    }
-
+    private List<SaidaItemModel> itensSaida;    
+   
     public List<SaidaItemModel> getItensSaida() {
         return itensSaida;
     }

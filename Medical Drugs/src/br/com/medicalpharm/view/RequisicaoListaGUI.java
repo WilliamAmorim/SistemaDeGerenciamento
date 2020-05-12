@@ -26,12 +26,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author willi
  */
-public class RequisicaoLista extends javax.swing.JFrame {
+public class RequisicaoListaGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form RequisicoesLista
      */
-    public RequisicaoLista() {
+    public RequisicaoListaGUI() {
         initComponents();           
         listarRequisicoesAction();
         this.setLocationRelativeTo(null);        
@@ -48,6 +48,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jb_novo3 = new javax.swing.JButton();
         jb_novo2 = new javax.swing.JButton();
         jb_novo = new javax.swing.JButton();
@@ -56,8 +57,12 @@ public class RequisicaoLista extends javax.swing.JFrame {
         jl_pesquisar_destino = new javax.swing.JLabel();
         jb_buscar = new javax.swing.JButton();
         tf_pesquisar_requisicao = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        jRadio_aberto = new javax.swing.JRadioButton();
+        jRadio_fechado = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -118,7 +123,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
                 jb_buscarActionPerformed1(evt);
             }
         });
-        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, -1, -1));
+        jPanel1.add(jb_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, -1, -1));
 
         tf_pesquisar_requisicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,14 +132,65 @@ public class RequisicaoLista extends javax.swing.JFrame {
         });
         jPanel1.add(tf_pesquisar_requisicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 490, 20));
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setSelected(true);
         jRadioButton1.setText("Código Requisição");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Data");
-        jPanel1.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton3)))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, 30));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        buttonGroup2.add(jRadio_aberto);
+        jRadio_aberto.setSelected(true);
+        jRadio_aberto.setText("Aberto");
+
+        buttonGroup2.add(jRadio_fechado);
+        jRadio_fechado.setText("Fechado");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jRadio_aberto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadio_fechado)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadio_aberto)
+                    .addComponent(jRadio_fechado))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 160, 30));
 
         jTable1.setUpdateSelectionOnSort(false);
         jTable1.setVerifyInputWhenFocusTarget(false);
@@ -238,7 +294,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
                             .addComponent(jb_novo4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
@@ -274,7 +330,7 @@ public class RequisicaoLista extends javax.swing.JFrame {
 
     private void jb_novoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_novoActionPerformed
         if(jTable1.getSelectedRow() != -1){
-            RequisicaoDevolver abrir = new RequisicaoDevolver();
+            RequisicaoDevolverGUI abrir = new RequisicaoDevolverGUI();
             abrir.codigo = jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().trim();
             abrir.listaProdutosRequicao();
             abrir.janelaPai = this;
@@ -327,29 +383,35 @@ public class RequisicaoLista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoListaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoListaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoListaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoLista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoListaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequisicaoLista().setVisible(true);
+                new RequisicaoListaGUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadio_aberto;
+    private javax.swing.JRadioButton jRadio_fechado;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -390,7 +452,12 @@ public class RequisicaoLista extends javax.swing.JFrame {
         DefaultTableModel row = (DefaultTableModel) jTable1.getModel();        
         for (int i = 0; i < requisicoes.size(); i++) {            
             String usuarioEstoquista = buscarUsuarioCodigo(i);            
-            row.addRow(new Object[]{requisicoes.get(i).getCodigo_requisicao(),data.inverterData(requisicoes.get(i).getData_emissao().toString(),"sql"),usuarioEstoquista,requi.statusRequisicao(requisicoes.get(i).getCodigo_requisicao().toString())});
+            String status = requi.statusRequisicao(requisicoes.get(i).getCodigo_requisicao().toString());
+            if(jRadio_aberto.isSelected() && status.equals("Aberto")){
+                row.addRow(new Object[]{requisicoes.get(i).getCodigo_requisicao(),data.inverterData(requisicoes.get(i).getData_emissao().toString(),"sql"),usuarioEstoquista,status});            
+            }else if(jRadio_fechado.isSelected() && status.equals("Fechado")){
+                row.addRow(new Object[]{requisicoes.get(i).getCodigo_requisicao(),data.inverterData(requisicoes.get(i).getData_emissao().toString(),"sql"),usuarioEstoquista,status});            
+            }
         }
     }
     private String buscarUsuarioCodigo(int i){

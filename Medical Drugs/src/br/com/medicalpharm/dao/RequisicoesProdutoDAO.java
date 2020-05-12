@@ -144,8 +144,7 @@ public class RequisicoesProdutoDAO {
         try{
             Conexao conexao = new Conexao();
             for (int i = 0; i < produto.size(); i++) {
-                
-            
+                            
             pstm = (PreparedStatement) conexao.conecta().prepareStatement(novaRequisicao);
             pstm.setString(1, produto.get(i).getTipo());
             pstm.setInt(2,produto.get(i).getCodigoRequisicao());            
@@ -154,9 +153,7 @@ public class RequisicoesProdutoDAO {
             pstm.setDate(5, (Date) produto.get(i).getData_devolucao());
             pstm.executeUpdate();
         }
-            conexao.desconecta();            
-            
-            System.out.println("cadastro ok");
+            conexao.desconecta();                                    
         }catch (Exception e) {
             e.printStackTrace();
         }

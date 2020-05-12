@@ -17,6 +17,43 @@ public class SaidaArmazemModel {
     private String motivo;
     private ArmazemModel destino;
 
+    public Integer getIdrequisitante() {
+        return idrequisitante;
+    }
+
+    public void setIdrequisitante(Integer idrequisitante) {
+        this.idrequisitante = idrequisitante;
+    }
+
+    public String getNomeRequisitante() {
+        return NomeRequisitante;
+    }
+
+    public void setNomeRequisitante(String NomeRequisitante) {
+        this.NomeRequisitante = NomeRequisitante;
+    }
+
+    public Integer getCodigoVeiculo() {
+        return codigoVeiculo;
+    }
+
+    public void setCodigoVeiculo(Integer codigoVeiculo) {
+        this.codigoVeiculo = codigoVeiculo;
+    }
+
+    public String getDescricaoVeiculo() {
+        return descricaoVeiculo;
+    }
+
+    public void setDescricaoVeiculo(String descricaoVeiculo) {
+        this.descricaoVeiculo = descricaoVeiculo;
+    }
+    
+    private Integer idrequisitante;
+    private String NomeRequisitante;
+    private Integer codigoVeiculo;
+    private String descricaoVeiculo;
+
     /**
      * @return the idArmazem
      */

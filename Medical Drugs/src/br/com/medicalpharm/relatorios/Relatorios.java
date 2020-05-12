@@ -1170,7 +1170,7 @@ private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical 
             } catch (SQLException erro) {
                 erro.printStackTrace();
             } catch (JRException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Não foi possivel fazer a impressão");
             }
         }
 

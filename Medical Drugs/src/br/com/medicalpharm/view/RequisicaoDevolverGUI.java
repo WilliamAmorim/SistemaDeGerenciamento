@@ -23,12 +23,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author willi
  */
-public class RequisicaoDevolver extends javax.swing.JFrame implements RequisicaoDevolver_Interface{
+public class RequisicaoDevolverGUI extends javax.swing.JFrame implements RequisicaoDevolverGUI_Interface{
 
     /**
      * Creates new form requisicaoDevolver
      */
-    public RequisicaoDevolver() {
+    public RequisicaoDevolverGUI() {
         initComponents();        
         this.setLocationRelativeTo(null);
 
@@ -169,21 +169,23 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoDevolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoDevolverGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoDevolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoDevolverGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoDevolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoDevolverGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RequisicaoDevolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RequisicaoDevolverGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RequisicaoDevolver().setVisible(true);
+                new RequisicaoDevolverGUI().setVisible(true);
             }
         });
     }
@@ -195,7 +197,7 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
     private javax.swing.JButton jb_salvar;
     // End of variables declaration//GEN-END:variables
      
-    RequisicaoLista janelaPai;
+    RequisicaoListaGUI janelaPai;
     boolean n  = false;
     private int index;
     public String codigo = null;
@@ -246,10 +248,11 @@ public class RequisicaoDevolver extends javax.swing.JFrame implements Requisicao
                 produtosList.add(produtos);
                 
                 ProdutoDAO pro = new ProdutoDAO(); 
-                int produtoID = Integer.parseInt(buscarProduto.listarProdutoDesc(row.getValueAt(i, 1).toString()));
+                int produtoID = Integer.parseInt(buscarProduto.listarProdutoDesc(row.getValueAt(i, 1).toString()));                
                 pro.updateQuatidade(Integer.parseInt(row.getValueAt(i, 3).toString()),produtoID , "+");
+               
                 }catch(Exception ex){
-                    System.out.println("erro");
+                    System.out.println("erro:"+ex);
                 }
         }
         return produtosList;                

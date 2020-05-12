@@ -9,7 +9,7 @@ package br.com.medicalpharm.view;
  *
  * @author willi
  */
-public interface RequisicaoDevolver_Interface {
+public interface RequisicaoDevolverGUI_Interface {
     public void pegarQtd(String qtd,int index);
     public void inicioTabela();
  

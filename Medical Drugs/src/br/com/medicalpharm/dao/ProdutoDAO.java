@@ -512,8 +512,8 @@ public List<ProdutoModel> listarProdutoComercial(String nome_produto) {
     public void updateQuatidade(int qtd,int id,String operacao){
         try{
             if(operacao.equals("+")){
-                updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`+? WHERE descProduto = ?";
-            }else{                
+                updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`+? WHERE idproduto = ?";
+            }else if (operacao.equals("-")){                
                 updateQuantidade = "UPDATE `produto` SET `quantidade`=`quantidade`-? WHERE idproduto = ?";
             }
             

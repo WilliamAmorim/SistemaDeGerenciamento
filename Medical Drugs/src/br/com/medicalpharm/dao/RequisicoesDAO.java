@@ -66,7 +66,7 @@ public class RequisicoesDAO {
             }
             conexao.desconecta();
         } catch (Exception e) {
-            e.printStackTrace();
+            
         }
         return requisicao;
     }

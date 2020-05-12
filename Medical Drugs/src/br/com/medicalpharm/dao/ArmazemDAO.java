@@ -22,8 +22,8 @@ import javax.swing.JOptionPane;
 public class ArmazemDAO {
 
     private String consultaArmazem = "SELECT codMovimento, dataMovimento, motivoMovimento, destino.idDestino, "
-            + "destino.descDestino FROM saidadestino, destino WHERE (destino.descDestino LIKE ?) & "
-            + "(destino.idDestino=destino_idDestino)";
+            + "destino.descDestino, usuario_requisitor.nome,veiculo.descricao FROM saidadestino, destino,usuario_requisitor,veiculo WHERE (destino.descDestino LIKE ?) & "
+            + "(destino.idDestino=destino_idDestino) & (saidadestino.idUsuario_requisitor = usuario_requisitor.codigo_requisitor) & (saidadestino.codigo_veiculo = veiculo.codigo)";
     private String consultaArmazemCodigo = "SELECT codMovimento, dataMovimento, motivoMovimento, destino.idDestino, "
             + "destino.descDestino FROM saidadestino, destino WHERE (destino.idDestino = ?) & "
             + "(destino.idDestino=destino_idDestino)";
@@ -34,7 +34,7 @@ public class ArmazemDAO {
             + "tbarmazem.quantidade FROM produto, tbarmazem where (codDestino=?) and (codProduto=?) and "
             + "(produto.idproduto=tbarmazem.codProduto) ORDER BY descProduto";
     private String cadastraArmazemItem = "INSERT INTO saidadestinoitem(saidadestinoitem.quantidade, codProduto, saida_saidadestino)VALUES(?,?,?)";
-    private String cadastraArmazem = "INSERT INTO saidadestino(dataMovimento,motivoMovimento, destino_idDestino)VALUES(?,?,?)";
+    private String cadastraArmazem = "INSERT INTO saidadestino(dataMovimento,motivoMovimento, destino_idDestino,idUsuario_requisitor,codigo_veiculo)VALUES(?,?,?,?,?)";
     PreparedStatement pstm;
 
     public List<SaidaArmazemModel> listaArmazem(String destino) {
@@ -54,6 +54,8 @@ public class ArmazemDAO {
                 arm.setDestino(new ArmazemModel(rs.getInt("destino.idDestino"), rs.getString("destino.descDestino")));
                 arm.setDataMovimento(rs.getDate("dataMovimento"));
                 arm.setMotivo(rs.getString("motivoMovimento"));
+                arm.setDescricaoVeiculo(rs.getString("descricao"));
+                arm.setNomeRequisitante(rs.getString("nome"));
                 arm.setIdArmazem(rs.getInt("codMovimento"));
                 armazens.add(arm);
             }
@@ -145,7 +147,6 @@ public class ArmazemDAO {
 
     public SaidaArmazemModel cadastraSaida(SaidaArmazemModel armazem) {
         try {
-
             Date dataSaida = null;
             if (armazem.getDataMovimento() != null) {
                 dataSaida = new Date(armazem.getDataMovimento().getTime());
@@ -156,6 +157,8 @@ public class ArmazemDAO {
             pstm.setDate(1, (java.sql.Date) dataSaida);
             pstm.setString(2, armazem.getMotivo());
             pstm.setInt(3, armazem.getDestino().getCod_destino());
+            pstm.setInt(4,armazem.getIdrequisitante());
+            pstm.setInt(5,armazem.getCodigoVeiculo());
             pstm.executeUpdate();
             pstm.close();
             conexao.desconecta();

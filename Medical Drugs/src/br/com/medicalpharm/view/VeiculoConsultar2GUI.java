@@ -42,12 +42,46 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
         jb_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Consultar Veiculo");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         jLabel2.setText("Veiculos Encontrados");
 
-        jTable1.setModel(Jt_veiculos        );
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Descricao", "Chassi", "Placa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(120);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
+        }
 
         jb_novo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/medicalpharm/image/novo_registro.gif"))); // NOI18N
         jb_novo1.setText("Novo");
@@ -104,7 +138,7 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_novo1)
+                    .addComponent(jb_novo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
@@ -140,6 +174,12 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
             //        }
         // pegarUsuario();
     }//GEN-LAST:event_jb_cancelarActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        if (evt.getClickCount() == 2 && evt.getButton() == evt.BUTTON1){
+             pegarVeiculo();
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -186,35 +226,31 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
     List<VeiculoModel> veiculos;
-    DefaultTableModel Jt_veiculos = new DefaultTableModel(null, new String[]{"Código", "Descrição","Chassi","Placa"});
+    //DefaultTableModel Jt_veiculos = new DefaultTableModel(null, new String[]{"Código", "Descrição","Chassi","Placa"});
     public void listarVeiculos(String parametro){
         VeiculoDAO ve = new VeiculoDAO();
-        while (Jt_veiculos.getRowCount() > 0) {
-             Jt_veiculos.removeRow(0);
-        }
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setNumRows(0);
         
         veiculos = ve.listarVeiculos(parametro,1);
         
-        String[] campos = new String[]{null, null};
-        for (int i = 0; i < veiculos.size(); i++) {
-            Jt_veiculos.addRow(campos);
-            Jt_veiculos.setValueAt(veiculos.get(i).getCodigo(),i,0);
-            Jt_veiculos.setValueAt(veiculos.get(i).getDescricao(),i,1);
-            Jt_veiculos.setValueAt(veiculos.get(i).getChassi(),i,2);
-            Jt_veiculos.setValueAt(veiculos.get(i).getPlaca(),i,3);
+        //String[] campos = new String[]{null, null};
+        DefaultTableModel row = (DefaultTableModel) jTable1.getModel();
+        for (int i = 0; i < veiculos.size(); i++) {            
+            row.addRow(new Object[]{veiculos.get(i).getCodigo(),veiculos.get(i).getDescricao(),veiculos.get(i).getChassi(),veiculos.get(i).getPlaca()});
         }
         
     }
     public VeiculoModel veiculo = new VeiculoModel();
     public RequisicaoNovaGUI  requiNova = null;
-    public SaidaEstoqueGUI saidaEstoque = null;
+    public ArmazemCadastroGUI saidaEstoque = null;
     RequisicaoNovaGUI_Interface reInterface;
-    SaidaEstoqueGUI_interface saInterface;
+    ArmazemCadastroGUI_Interface saInterface;
     public void pegarVeiculo(){
-        veiculo.setCodigo(Integer.parseInt(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),0).toString().trim()));
-        veiculo.setDescricao(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),1).toString().trim());
-        veiculo.setChassi(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),2).toString().trim());
-        veiculo.setPlaca(Jt_veiculos.getValueAt(jTable1.getSelectedRow(),3).toString().trim());
+        veiculo.setCodigo(Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(),0).toString().trim()));
+        veiculo.setDescricao(jTable1.getValueAt(jTable1.getSelectedRow(),1).toString().trim());
+        veiculo.setChassi(jTable1.getValueAt(jTable1.getSelectedRow(),2).toString().trim());
+        veiculo.setPlaca(jTable1.getValueAt(jTable1.getSelectedRow(),3).toString().trim());
         if(requiNova != null){
             reInterface.carregarVeiculo(veiculo);
         }else if(saidaEstoque != null){
@@ -226,7 +262,7 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
     public void setRequisicaoNova(RequisicaoNovaGUI_Interface re){
         reInterface = re;
     }
-    public void setSaidaEstoque(SaidaEstoqueGUI_interface sa){
+    public void setSaidaEstoque(ArmazemCadastroGUI_Interface sa){
         saInterface = sa;
     }
     

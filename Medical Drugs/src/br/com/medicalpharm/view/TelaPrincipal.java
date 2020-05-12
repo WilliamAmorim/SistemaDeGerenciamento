@@ -1323,9 +1323,9 @@ private void jmi_recoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
     // TODO add your handling code here:
 }//GEN-LAST:event_jmi_recoverActionPerformed
-    RequisicaoLista requisicaoLista;
+    RequisicaoListaGUI requisicaoLista;
     private void jb_ajuste1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ajuste1ActionPerformed
-        requisicaoLista = new RequisicaoLista();
+        requisicaoLista = new RequisicaoListaGUI();
         requisicaoLista.setVisible(true);
     }//GEN-LAST:event_jb_ajuste1ActionPerformed
 
@@ -1335,7 +1335,7 @@ private void jmi_recoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        requisicaoLista = new RequisicaoLista();
+        requisicaoLista = new RequisicaoListaGUI();
         requisicaoLista.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 

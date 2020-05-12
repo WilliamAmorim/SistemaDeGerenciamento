@@ -105,6 +105,12 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
 
         jLabel1.setText("Data:");
 
+        jtf_veiculo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtf_veiculoKeyPressed(evt);
+            }
+        });
+
         jtf_codigoUsuarioRequisitante.setEnabled(false);
 
         jLabel2.setText("Código:");
@@ -115,6 +121,12 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
+            }
+        });
+
+        jtf_usuarioRequisitante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtf_usuarioRequisitanteKeyPressed(evt);
             }
         });
 
@@ -453,6 +465,26 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
         });
     }//GEN-LAST:event_js_qtdKeyPressed
 
+    private void jtf_usuarioRequisitanteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_usuarioRequisitanteKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {        
+            RequisitanteConsultarGUI requi = new RequisitanteConsultarGUI();
+            requi.listarUsuarios(jtf_usuarioRequisitante.getText());
+            requi.setRequisicaoNova(this);
+            requi.requiNova = this;
+            requi.setVisible(true);
+        }
+    }//GEN-LAST:event_jtf_usuarioRequisitanteKeyPressed
+
+    private void jtf_veiculoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtf_veiculoKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {        
+            VeiculoConsultar2GUI mostrar = new VeiculoConsultar2GUI();
+            mostrar.listarVeiculos(jtf_veiculo.getText());
+            mostrar.setRequisicaoNova(this);
+            mostrar.requiNova = this;
+            mostrar.setVisible(true);
+        }
+    }//GEN-LAST:event_jtf_veiculoKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -525,7 +557,7 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
     public String usuarioRequisitante;
     public String codigo_requisicao;
     public String veiculo;
-    public RequisicaoLista requisicaoLista = null;
+    public RequisicaoListaGUI requisicaoLista = null;
     
     public void verificarUpdata(){
          if(update){
@@ -676,16 +708,22 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
                 }else{
                     JOptionPane.showMessageDialog(null, "Requisição Criada com sucesso");                
                 }
-                
-                int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
-                if (selectedOption == JOptionPane.YES_NO_OPTION) {
-                    Relatorios relatorio = new Relatorios();
-                    if(update){                        
-                        relatorio.relatorioEdicaoRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()),new java.sql.Date(new java.util.Date().getTime()));
+                boolean imprimir = true;
+                while(imprimir){
+                    int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
+                    if (selectedOption == JOptionPane.YES_NO_OPTION) {
+                        Relatorios relatorio = new Relatorios();
+                        if(update){                        
+                            relatorio.relatorioEdicaoRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()),new java.sql.Date(new java.util.Date().getTime()));
+                            imprimir = false;
+                        }else{
+                            relatorio.relatorioNovaRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()));
+                            imprimir = false;
+                        }                                        
+
                     }else{
-                        relatorio.relatorioNovaRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()));
-                    }                                        
-                    
+                        imprimir = false;
+                    }
                 }
                 requisicaoLista.setEnabled(true);
                     setVisible(false);
