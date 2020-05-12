@@ -51,7 +51,7 @@ public class VeiculoConsultarGUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consultar Veiculos");
+        setTitle("Consultar Veículos");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 exit(evt);
@@ -63,7 +63,7 @@ public class VeiculoConsultarGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "codigo veiculo", "desscricao", "chassi", "placa"
+                "Código", "Descrição", "Chassi", "Placa"
             }
         ) {
             Class[] types = new Class [] {

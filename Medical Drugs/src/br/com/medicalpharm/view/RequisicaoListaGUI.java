@@ -359,10 +359,15 @@ public class RequisicaoListaGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosed
 
     private void jb_novo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_novo4ActionPerformed
-        int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
-        if (selectedOption == JOptionPane.YES_NO_OPTION) {
-            Relatorios relatorio = new Relatorios();
-            relatorio.relatorioRequisicoes();
+        if(jTable1.getSelectedRow() != -1){                
+            int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
+            if (selectedOption == JOptionPane.YES_NO_OPTION) {
+                Relatorios relatorio = new Relatorios();
+                int codigo = Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString().trim());
+                relatorio.relatorioNovaRequisicao(codigo);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Selecione um item da tabela");
         }
     }//GEN-LAST:event_jb_novo4ActionPerformed
 

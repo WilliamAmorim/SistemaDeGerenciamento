@@ -1035,7 +1035,7 @@ private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical 
         }
         
         public void relatorioDevolucaoRequisicao(int idRequisicao,Date data){
-             try {
+            try {
                 //String consulta = "SELECT `usuario_requisitor`.`nome`,`usuario`.`nomeUsuario`,`veiculo`.`descricao`,`requisicao`.`data_emissao` FROM `requisicao`,`veiculo`,`usuario_requisitor`,`usuario` WHERE  `requisicao`.`usuario_requisitor` = `usuario_requisitor`.`codigo_requisitor` AND `requisicao`.`usuario_estoquista` = `usuario`.`idusuario` AND `requisicao`.`veiculo` = `veiculo`.`codigo`";
                 String consulta = "SELECT `requisicao`.`codigo_requisicao`,\n" +
                                     "		`usuario`.`nomeUsuario`, \n" +
@@ -1078,7 +1078,10 @@ private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical 
             } catch (SQLException erro) {
                 erro.printStackTrace();
             } catch (JRException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+                int selectedOption = JOptionPane.showConfirmDialog(null, "Não foi possivel imprimir relatório\nDeseja imprimir novamente?", "Erro", JOptionPane.YES_NO_OPTION);
+                if (selectedOption == JOptionPane.YES_NO_OPTION) {
+                    relatorioDevolucaoRequisicao(idRequisicao,data);
+                }
             }
         }
         
@@ -1123,7 +1126,10 @@ private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical 
             } catch (SQLException erro) {
                 erro.printStackTrace();
             } catch (JRException ex) {
-                Logger.getLogger(Relatorios.class.getName()).log(Level.SEVERE, null, ex);
+                int selectedOption = JOptionPane.showConfirmDialog(null, "Não foi possivel imprimir relatório\nDeseja imprimir novamente?", "Erro", JOptionPane.YES_NO_OPTION);
+                if (selectedOption == JOptionPane.YES_NO_OPTION) {
+                    relatorioNovaRequisicao(idRequisicao);
+                }
             }
         }
         
@@ -1168,9 +1174,13 @@ private final String url = "C:/medicaPharm/Medical Drugs/jasper/";//"C:/Medical 
                         JOptionPane.showMessageDialog(null, "Registro não encontrado para o filtro informado.");
                     }
             } catch (SQLException erro) {
-                erro.printStackTrace();
+                //JOptionPane.showMessageDialog(null, "Não foi possivel fazer a impressão no sql");
+
             } catch (JRException ex) {
-                JOptionPane.showMessageDialog(null, "Não foi possivel fazer a impressão");
+                int selectedOption = JOptionPane.showConfirmDialog(null, "Não foi possivel imprimir relatório\nDeseja imprimir novamente?", "Erro", JOptionPane.YES_NO_OPTION);
+                if (selectedOption == JOptionPane.YES_NO_OPTION) {
+                    relatorioEdicaoRequisicao(idRequisicao,data);
+                }
             }
         }
 

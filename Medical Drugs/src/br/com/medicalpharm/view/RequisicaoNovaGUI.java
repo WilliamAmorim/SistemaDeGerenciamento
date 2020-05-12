@@ -700,28 +700,24 @@ public class RequisicaoNovaGUI extends javax.swing.JFrame implements RequisicaoN
                 novaRequisicao.setCodigo_veiculo(jtf_codigoVeiculo.getText());
 
                 cadastrar.cadastrarNovaRequisicao(novaRequisicao, criarListaProdutos(),update);
+                requisicaoLista.listarRequisicoesAction();
                 if(update){
                     JOptionPane.showMessageDialog(null, "Alterações Salvas!");                
                 }else{
                     JOptionPane.showMessageDialog(null, "Requisição Criada com sucesso");                
                 }
-                boolean imprimir = true;
-                while(imprimir){
-                    int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
+               
+                    int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatório ?", "Atenção", JOptionPane.YES_NO_OPTION);
                     if (selectedOption == JOptionPane.YES_NO_OPTION) {
                         Relatorios relatorio = new Relatorios();
                         if(update){                        
-                            relatorio.relatorioEdicaoRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()),new java.sql.Date(new java.util.Date().getTime()));
-                            imprimir = false;
+                            relatorio.relatorioEdicaoRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()),new java.sql.Date(new java.util.Date().getTime()));                        
                         }else{
-                            relatorio.relatorioNovaRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()));
-                            imprimir = false;
+                            relatorio.relatorioNovaRequisicao(Integer.parseInt(jtf_codigoRequisicao.getText()));                            
                         }                                        
 
-                    }else{
-                        imprimir = false;
                     }
-                }
+                
                 requisicaoLista.setEnabled(true);
                     setVisible(false);
                     

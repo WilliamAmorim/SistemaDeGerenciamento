@@ -65,7 +65,7 @@ public class RequisitanteGerenciarGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Nome", "Cpf"
+                "Código", "Nome", "Cpf"
             }
         ) {
             Class[] types = new Class [] {

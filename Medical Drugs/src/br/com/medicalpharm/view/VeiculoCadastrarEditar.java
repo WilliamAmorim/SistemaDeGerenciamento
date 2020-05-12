@@ -70,7 +70,7 @@ public class VeiculoCadastrarEditar extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Codigo:");
+        jLabel5.setText("Código:");
 
         jtf_codigo.setEnabled(false);
         jtf_codigo.addActionListener(new java.awt.event.ActionListener() {

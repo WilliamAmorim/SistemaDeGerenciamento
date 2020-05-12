@@ -54,7 +54,7 @@ public class RequisitanteConsultarGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Nome"
+                "Código", "Nome"
             }
         ) {
             Class[] types = new Class [] {

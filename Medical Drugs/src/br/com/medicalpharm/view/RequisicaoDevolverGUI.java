@@ -87,7 +87,7 @@ public class RequisicaoDevolverGUI extends javax.swing.JFrame implements Requisi
 
             },
             new String [] {
-                "código Requisicao", "Produto", "Saldo", "Qtd"
+                "Código", "Produto", "Saldo", "Qtd"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -265,13 +265,15 @@ public class RequisicaoDevolverGUI extends javax.swing.JFrame implements Requisi
             cadastrar.cadastrarNovaRequisicao(novaRequisicao, criarListaProdutos(),true);
             JOptionPane.showMessageDialog(null, "Devolução concluida!");
             
-            int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatorio ?", "Atenção", JOptionPane.YES_NO_OPTION);
+            int selectedOption = JOptionPane.showConfirmDialog(this, "Deseja imprimir relatório ?", "Atenção", JOptionPane.YES_NO_OPTION);
             if (selectedOption == JOptionPane.YES_NO_OPTION) {
                 Relatorios relatorio = new Relatorios();
                 relatorio.relatorioDevolucaoRequisicao(Integer.parseInt(codigo), new java.sql.Date(new java.util.Date().getTime()));                
             }
+            setVisible(false);
             janelaPai.setEnabled(true);
-                janelaPai.listarRequisicoesAction();
+            janelaPai.listarRequisicoesAction();
+            janelaPai.listaProdutosRequicao();
                 setVisible(false);
         }catch(Exception ex){
             

@@ -42,17 +42,17 @@ public class VeiculoConsultar2GUI extends javax.swing.JFrame {
         jb_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Consultar Veiculo");
+        setTitle("Consultar Veículo");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jLabel2.setText("Veiculos Encontrados");
+        jLabel2.setText("Veículos Encontrados");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Codigo", "Descricao", "Chassi", "Placa"
+                "Código", "Descrição", "Chassi", "Placa"
             }
         ) {
             Class[] types = new Class [] {
