@@ -166,14 +166,14 @@ public class EntradaGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Produto", "Lote", "Preço", "Quantidade", "Vencimento"
+                "Produto", "Preço", "Quantidade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -184,6 +184,7 @@ public class EntradaGUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setColumnSelectionAllowed(true);
         jTable1.setName("jTable1"); // NOI18N
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable1);
@@ -192,8 +193,6 @@ public class EntradaGUI extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(200);
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(30);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 688, 150));
@@ -453,10 +452,10 @@ public class EntradaGUI extends javax.swing.JFrame {
                     //ou i<destino.size() para retornar todos
                     EntradaItemModel entradaItemModel = new EntradaItemModel();
                     entradaItemModel.setProduto(entradaItens.get(i).getProduto());
-                    entradaItemModel.setLote(entradaItens.get(i).getLote());
+                  //  entradaItemModel.setLote(entradaItens.get(i).getLote());
                     entradaItemModel.setQnt(entradaItens.get(i).getQnt());
                     entradaItemModel.setPreco(entradaItens.get(i).getPreco());
-                    entradaItemModel.setVencimento(entradaItens.get(i).getVencimento());
+                  //  entradaItemModel.setVencimento(entradaItens.get(i).getVencimento());
 
                     preço = String.valueOf(entradaItens.get(i).getPreco());
                     preço = setPrecoFormat(preço);
@@ -472,8 +471,8 @@ public class EntradaGUI extends javax.swing.JFrame {
 
                     DefaultTableModel row = (DefaultTableModel) jTable1.getModel();
                     ItemDbGrid hashDbGrid = new ItemDbGrid(entradaItemModel, entradaItemModel.getProduto().getNome_produto());
-                    row.addRow(new Object[]{hashDbGrid, entradaItemModel.getLote(),
-                                preço, entradaItemModel.getQnt(), vencimento});
+                    row.addRow(new Object[]{hashDbGrid,
+                                preço, entradaItemModel.getQnt()});
                 } catch (ParseException ex) {
                     Logger.getLogger(EntradaGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }

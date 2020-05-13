@@ -15,6 +15,7 @@ import br.com.medicalpharm.model.RequisicoesProdutoModel;
 import br.com.medicalpharm.model.UsuarioModel;
 import br.com.medicalpharm.relatorios.Relatorios;
 import br.com.medicalpharm.util.Data;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -128,6 +129,11 @@ public class RequisicaoListaGUI extends javax.swing.JFrame {
         tf_pesquisar_requisicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_pesquisar_requisicaoActionPerformed(evt);
+            }
+        });
+        tf_pesquisar_requisicao.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tf_pesquisar_requisicaoKeyPressed(evt);
             }
         });
         jPanel1.add(tf_pesquisar_requisicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 490, 20));
@@ -370,6 +376,12 @@ public class RequisicaoListaGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um item da tabela");
         }
     }//GEN-LAST:event_jb_novo4ActionPerformed
+
+    private void tf_pesquisar_requisicaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_pesquisar_requisicaoKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) { 
+            listarRequisicoesAction();
+        } 
+    }//GEN-LAST:event_tf_pesquisar_requisicaoKeyPressed
 
     /**
      * @param args the command line arguments

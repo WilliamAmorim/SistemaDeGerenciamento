@@ -347,16 +347,18 @@ public class VeiculoConsultarGUI extends javax.swing.JFrame {
         
     }
      private void abrirEditar(){
-        VeiculoCadastrarEditar abrir = new VeiculoCadastrarEditar();
-        this.setEnabled(false);
-        abrir.codigo = jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString();
-        abrir.descricao = jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString();
-        abrir.chassi = jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString();
-        abrir.placa = jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString();
-        abrir.update = true;
-        abrir.telaPai = this;
-        abrir.update();
-        abrir.setVisible(true);
+         if(jTable1.getSelectedRow() != -1){
+            VeiculoCadastrarEditar abrir = new VeiculoCadastrarEditar();
+            this.setEnabled(false);
+            abrir.codigo = jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString();
+            abrir.descricao = jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString();
+            abrir.chassi = jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString();
+            abrir.placa = jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString();
+            abrir.update = true;
+            abrir.telaPai = this;
+            abrir.update();
+            abrir.setVisible(true);
+        }
     }
      
     private void pesquisar(){

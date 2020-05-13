@@ -245,14 +245,14 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
 
             },
             new String [] {
-                "Código", "Produto", "Lote", "Preço", "Qtd", "Vencimento"
+                "Código", "Produto", "Preço", "Qtd"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -270,8 +270,6 @@ public class EntradaCadastraGUI extends javax.swing.JFrame implements EntradaCad
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(50);
         }
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 550, 200));
@@ -826,11 +824,11 @@ private void jtf_fornecedorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST
             for (int i = 0; i < jTable1.getRowCount(); i++) {
                 EntradaItemModel entrItem = new EntradaItemModel();
                 entrItem.setProduto(new ProdutoModel((Integer) jTable1.getValueAt(i, 0)));
-                entrItem.setLote((String) jTable1.getValueAt(i, 2));
-                entrItem.setPreco(getPrecoFormato((String) jTable1.getValueAt(i, 3)));
-                entrItem.setQnt(Integer.parseInt((String) jTable1   8.getValueAt(i, 4)));
+                entrItem.setLote("0");
+                entrItem.setPreco(getPrecoFormato((String) jTable1.getValueAt(i, 2)));
+                entrItem.setQnt(Integer.parseInt((String) jTable1.getValueAt(i, 3)));
                 try {
-                    entrItem.setVencimento(new SimpleDateFormat("dd/MM/yyyy").parse((String) jTable1.getValueAt(i, 5)));
+                    entrItem.setVencimento(new SimpleDateFormat("dd/MM/yyyy").parse("00/00/0000"));
                     //                ItemDbGrid hashDbGrid1 = (ItemDbGrid) jTable1.getValueAt(i, 0);
                 } catch (ParseException ex) {
                     Logger.getLogger(EntradaCadastraGUI.class.getName()).log(Level.SEVERE, null, ex);
